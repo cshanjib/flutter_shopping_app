@@ -33,6 +33,14 @@ abstract class MockUtil {
           theme: 0xFFF9E3FD),
     ];
   }
+
+  static List<String> getOfferBanners() {
+    return [
+      "https://www.kenresearch.com/uploads/posts/images/Herbal%20Products%20Market.jpg",
+      "https://images.unsplash.com/photo-1506617564039-2f3b650b7010?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Z3JvY2VyeXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80",
+      "https://apnafamilystore.com/shop-online-banner.jpg",
+    ];
+  }
 }
 
 // {

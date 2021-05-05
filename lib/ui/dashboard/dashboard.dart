@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_shopping_app/ui/category/category_list.dart';
+import 'package:flutter_shopping_app/ui/common/carousel/custom_carousel.dart';
 import 'package:flutter_shopping_app/ui/common/form/custom_text_field.dart';
 
 class Dashboard extends StatelessWidget {
@@ -19,6 +20,7 @@ class Dashboard extends StatelessWidget {
         ),
 
         CategoryList(),
+        CustomCarousel(),
 
         Text("Dashboard"),
       ],

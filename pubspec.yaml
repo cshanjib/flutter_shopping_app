@@ -24,6 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
   json_annotation: ^3.0.1
+  carousel_slider: ^3.0.0
 
 
 
