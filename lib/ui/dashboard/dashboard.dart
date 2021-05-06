@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_shopping_app/ui/category/category_list.dart';
 import 'package:flutter_shopping_app/ui/common/carousel/custom_carousel.dart';
 import 'package:flutter_shopping_app/ui/common/form/custom_text_field.dart';
+import 'package:flutter_shopping_app/ui/common/item/item_list.dart';
+import 'package:flutter_shopping_app/util/mock_util.dart';
 
 class Dashboard extends StatelessWidget {
-
-
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return ListView(
       children: [
         CustomTextField(
           prefixIcon: Icon(
@@ -18,11 +18,11 @@ class Dashboard extends StatelessWidget {
           ),
           placeholder: 'Search ...',
         ),
-
         CategoryList(),
         CustomCarousel(),
-
-        Text("Dashboard"),
+        ItemList(MockUtil.getTrendingItems(), title: "Trending",),
+        ItemList(MockUtil.getFeaturedItems(), title: "Featured",),
+        ItemList(MockUtil.getTopSellingItems(), title: "Top Selling",),
       ],
     );
   }
