@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: ThemeWhite,
       ),
       home: Scaffold(
+        backgroundColor: Colors.white,
         body: Dashboard(),
         appBar: AppBar(
           centerTitle: false,

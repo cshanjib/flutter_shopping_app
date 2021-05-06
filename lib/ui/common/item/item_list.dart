@@ -6,8 +6,10 @@ import 'package:flutter_shopping_app/ui/common/item/item_card.dart';
 class ItemList extends StatelessWidget {
   final List<ProductItem> items;
   final String title;
+  final double topMargin;
 
-  const ItemList(this.items, {Key key, this.title: ""}) : super(key: key);
+  const ItemList(this.items, {Key key, this.title: "", this.topMargin: 10})
+      : super(key: key);
 
   _seeAll() {}
 
@@ -16,7 +18,7 @@ class ItemList extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.fromLTRB(10, 0, 10, 4),
+          padding: EdgeInsets.fromLTRB(10, topMargin, 10, 4),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

@@ -11,12 +11,15 @@ class Dashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        CustomTextField(
-          prefixIcon: Icon(
-            Icons.search,
-            color: Colors.grey,
+        Padding(
+          padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+          child: CustomTextField(
+            prefixIcon: Icon(
+              Icons.search,
+              color: Colors.grey,
+            ),
+            placeholder: 'Search ...',
           ),
-          placeholder: 'Search ...',
         ),
         CategoryList(),
         CustomCarousel(),
