@@ -1,14 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_shopping_app/ui/common/item/data/model/product_item.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_shopping_app/constant/enum.dart';
+import 'package:flutter_shopping_app/ui/common/item/bloc/product_item_cubit.dart';
 import 'package:flutter_shopping_app/ui/common/item/item_card.dart';
+import 'package:get_it/get_it.dart';
 
 class ItemList extends StatelessWidget {
-  final List<ProductItem> items;
+  final ITEM_TYPE type;
   final String title;
   final double topMargin;
 
-  const ItemList(this.items, {Key key, this.title: "", this.topMargin: 10})
+  const ItemList(this.type, {Key key, this.title: "", this.topMargin: 10})
       : super(key: key);
 
   _seeAll() {}
@@ -33,14 +36,21 @@ class ItemList extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(
-          height: 158,
-          child: ListView.builder(
-            itemBuilder: (context, index) => ItemCard(
-              item: items[index],
-            ),
-            itemCount: items.length,
-            scrollDirection: Axis.horizontal,
+        BlocProvider<ProductItemCubit>(
+          create: (context) =>
+              GetIt.instance.get<ProductItemCubit>()..loadProducts(type: type),
+          child: SizedBox(
+            height: 158,
+            child: BlocBuilder<ProductItemCubit, ProductItemState>(
+                builder: (context, state) {
+              return ListView.builder(
+                itemBuilder: (context, index) => ItemCard(
+                  item: state.items[index],
+                ),
+                itemCount: state.items.length,
+                scrollDirection: Axis.horizontal,
+              );
+            }),
           ),
         ),
       ],
