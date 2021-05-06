@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_shopping_app/constant/color.dart';
+import 'package:flutter_shopping_app/injectable/config.dart';
 import 'package:flutter_shopping_app/ui/dashboard/dashboard.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  configureDependencies();
   runApp(MyApp());
 }
 
