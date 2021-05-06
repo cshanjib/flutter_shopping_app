@@ -27,6 +27,8 @@ dependencies:
   carousel_slider: ^3.0.0
   injectable: ^1.0.7
   get_it: ^5.0.6
+  equatable: ^1.2.6
+  flutter_bloc: ^6.1.2
 
 
 
