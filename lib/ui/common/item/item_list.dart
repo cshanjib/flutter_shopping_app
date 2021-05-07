@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_shopping_app/constant/enum.dart';
 import 'package:flutter_shopping_app/ui/common/item/bloc/product_item_cubit.dart';
 import 'package:flutter_shopping_app/ui/common/item/item_card.dart';
+import 'package:flutter_shopping_app/ui/common/item/item_loader.dart';
 import 'package:get_it/get_it.dart';
 
 class ItemList extends StatelessWidget {
@@ -43,11 +44,23 @@ class ItemList extends StatelessWidget {
             height: 158,
             child: BlocBuilder<ProductItemCubit, ProductItemState>(
                 builder: (context, state) {
+              if (state.hasNoData) return EmptyCard();
               return ListView.builder(
-                itemBuilder: (context, index) => ItemCard(
-                  item: state.items[index],
-                ),
-                itemCount: state.items.length,
+                itemBuilder: (context, index) => index >= state.items.length
+                    ? ItemLoaderCard(
+                        errorMsg: state.error,
+                        retry: () => _retry(context),
+                      )
+                    : ItemCard(
+                        item: state.items[index],
+                      ),
+                itemCount: !state.init
+                    ? 4
+                    : state.hasError
+                        ? state.items.length + 1
+                        : state.loading
+                            ? state.items.length + 2
+                            : state.items.length,
                 scrollDirection: Axis.horizontal,
               );
             }),
@@ -55,5 +68,9 @@ class ItemList extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  _retry(BuildContext context) {
+    context.read<ProductItemCubit>().loadProducts(type: type);
   }
 }

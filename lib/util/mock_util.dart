@@ -62,8 +62,7 @@ abstract class MockUtil {
           discount: 10),
       ProductItem(
           name: "Strawberries",
-          imageUrl:
-          "https://www.freeiconspng.com/uploads/strawberry-png-9.png",
+          imageUrl: "https://www.freeiconspng.com/uploads/strawberry-png-9.png",
           currency: 9.9,
           currencyType: "\$",
           sellingUnit: "per kg",
@@ -76,14 +75,15 @@ abstract class MockUtil {
       ProductItem(
           name: "Carrots",
           imageUrl:
-          "https://www.transparentpng.com/thumb/carrot/71HwEm-fresh-carrot-photos.png",
+              "https://www.transparentpng.com/thumb/carrot/71HwEm-fresh-carrot-photos.png",
           currency: 19.9,
           currencyType: "\$",
           sellingUnit: "per kg",
           discount: 10),
       ProductItem(
           name: "Banana",
-          imageUrl: "https://lh3.googleusercontent.com/proxy/BOW44p3gAoQxVN-8ZyHW2GPNNMSHdTpt_pMhCRdv626T9PwZrOehRmGRkx0yO1tNwVYXMPe6fiCUaSSu9AulQhmOMPhxxoQk8cJdV02w7aS4Z6eIhD2_WpJvQagliJJapQOiANFD8agNAc0ujavJXjDSvWIPQ1Pl6rD9Lg",
+          imageUrl:
+              "https://www.pngkey.com/png/full/1009-10099133_banana-png-free-commercial-use-image-.png",
           currency: 7.9,
           currencyType: "\$",
           sellingUnit: "per kg",
@@ -91,7 +91,7 @@ abstract class MockUtil {
       ProductItem(
           name: "Beef",
           imageUrl:
-          "https://lh3.googleusercontent.com/proxy/VOAWvymbQFdyjhV-HwIr2p6frGZ3837LC4n9h6BiohPHThxmYaWFVzqTj_06J3Ya7bAaC83q0_DeObwEOOsmSp0wnp8T33LKZ7Uofw7R8qUu-5hKSHt9wlYlsRHZwtOl8HA",
+              "https://www.pngkey.com/png/full/36-368340_beef-transparent-background.png",
           currency: 49.9,
           currencyType: "\$",
           sellingUnit: "per kg",
@@ -99,7 +99,7 @@ abstract class MockUtil {
       ProductItem(
           name: "Pineapple",
           imageUrl:
-          "https://www.freepnglogos.com/uploads/pineapple-png/pineapple-transparent-png-clip-art-image-gallery-24.png",
+              "https://www.pngkey.com/png/full/6-67795_free-png-pineapple-png-images-transparent-pineapple-png.png",
           currency: 7,
           currencyType: "\$",
           sellingUnit: "per piece",
@@ -111,23 +111,22 @@ abstract class MockUtil {
     return [
       ProductItem(
           name: "Peas",
-          imageUrl:
-          "http://pngimg.com/uploads/pea/small/pea_PNG24285.png",
+          imageUrl: "http://pngimg.com/uploads/pea/small/pea_PNG24285.png",
           currency: 17.9,
           currencyType: "\$",
           sellingUnit: "per kg",
           discount: 7),
       ProductItem(
           name: "Chips",
-          imageUrl: "https://lh3.googleusercontent.com/proxy/xX0Ik3kBDXlfWECuyyK3wCq_j5t26741tyrJ_Uq1m-eFfjryTOPKBMdy6pVgmBvmhqrz7rhhjsc9aNvNZOJqSfns_J-X2NAoi0p9HV9Wwm6x22xexTCcoio-cwY8KarQ",
+          imageUrl:
+              "http://www.pngall.com/wp-content/uploads/4/Potato-Chips-PNG-Clipart.png",
           currency: 7.9,
           currencyType: "\$",
           sellingUnit: "per kg",
           discount: 12),
       ProductItem(
           name: "Corn",
-          imageUrl:
-          "https://freepngimg.com/thumb/categories/951.png",
+          imageUrl: "https://freepngimg.com/thumb/categories/951.png",
           currency: 49.9,
           currencyType: "\$",
           sellingUnit: "per kg",
@@ -135,7 +134,7 @@ abstract class MockUtil {
       ProductItem(
           name: "Spinach",
           imageUrl:
-          "https://lh3.googleusercontent.com/proxy/5_YRMt-pzx7mbns4dNmuTipS0AanpL1nt6mL5E4fPQo70gOsDcxm7GHZQ-pP0AiXjC0wAmvvRn0ORuLkSmxjZZcIDZrsZ_voFfRAZ9ix",
+              "https://dehatisabji.com/wp-content/uploads/2020/11/Spinach-All-Green-600x469-1.jpg",
           currency: 7,
           currencyType: "\$",
           sellingUnit: "per piece",

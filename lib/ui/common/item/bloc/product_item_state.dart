@@ -10,7 +10,9 @@ class ProductItemState extends Equatable {
 
   bool get hasError => error != null && error.isNotEmpty;
 
-  bool get hasData => items.length > 0;
+  bool get hasData => init && items.isNotEmpty;
+
+  bool get hasNoData => init && items.isEmpty;
 
   int get size => items?.length ?? 0;
 
