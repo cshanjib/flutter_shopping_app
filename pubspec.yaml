@@ -29,6 +29,7 @@ dependencies:
   get_it: ^5.0.6
   equatable: ^1.2.6
   flutter_bloc: ^6.1.2
+  flutter_rating_bar: ^4.0.0
 
 
 
