@@ -30,6 +30,7 @@ dependencies:
   equatable: ^1.2.6
   flutter_bloc: ^6.1.2
   flutter_rating_bar: ^4.0.0
+  shared_preferences: ^2.0.5
 
 
 
