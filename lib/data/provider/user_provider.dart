@@ -15,8 +15,8 @@ class MockUserProvider implements UserProvider {
   Future<UserAuth> login(String username, String password) async {
     //add some delay to give the feel of api call
     await Future.delayed(Duration(seconds: 3));
-    final List<Map> _data = MockUtil.getUsers();
-    Map _user = _data.firstWhere(
+    final List<Map<String, dynamic>> _data = MockUtil.getUsers();
+    Map<String, dynamic> _user = _data.firstWhere(
         (Map data) =>
             data["username"]?.toString()?.trim() == username &&
             data["password"]?.toString()?.trim() == password,

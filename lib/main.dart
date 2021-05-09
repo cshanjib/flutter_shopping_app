@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider<AuthTokenCubit>(
           create: (context) => GetIt.I.get<AuthTokenCubit>()..init(),
+          lazy: false,
         )
       ],
       child: MaterialApp(

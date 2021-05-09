@@ -235,7 +235,7 @@ abstract class MockUtil {
     ];
   }
 
-  static List<Map> getUsers() {
+  static List<Map<String, dynamic>> getUsers() {
     return [
       {
         "username": "user1",

@@ -21,4 +21,9 @@ class AuthTokenCubit extends Cubit<AuthTokenState> {
       emit(state.update(error: errorMsg));
     }
   }
+
+  void logout(){
+    PrefUtil.clearUserToken();
+    emit(AuthTokenState.initial());
+  }
 }
