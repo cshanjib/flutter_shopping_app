@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_shopping_app/constant/color.dart';
 import 'package:flutter_shopping_app/ui/common/item/data/model/product_item.dart';
 import 'package:flutter_shopping_app/ui/common/item/detail/item_detail.dart';
+import 'package:flutter_shopping_app/util/dialog_util.dart';
 
 class ItemCard extends StatelessWidget {
   final ProductItem item;

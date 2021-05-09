@@ -7,14 +7,20 @@ class CustomButton extends StatelessWidget {
   final Widget child;
   final EdgeInsets padding;
   final Color backgroundColor;
+  final Color disabledColor;
   final VoidCallback onPressed;
+  final bool disabled;
+
+  bool get _disabled => disabled || onPressed == null;
 
   const CustomButton(
       {Key key,
       this.label,
       this.onPressed,
+      this.disabled: false,
       this.child,
       this.backgroundColor: ThemeColor,
+      this.disabledColor: ThemeTextColorLightest,
       this.padding: const EdgeInsets.all(20)})
       : super(key: key);
 
@@ -28,9 +34,9 @@ class CustomButton extends StatelessWidget {
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(20.0)),
         ),
-        backgroundColor: backgroundColor,
+        backgroundColor: _disabled ? disabledColor : backgroundColor,
       ),
-      onPressed: onPressed,
+      onPressed: _disabled ? null : onPressed,
       child: child ??
           Text(
             label ?? "",
