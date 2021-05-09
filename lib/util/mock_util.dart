@@ -166,7 +166,8 @@ abstract class MockUtil {
       "data": [
         {
           "name": "Peas",
-          "imageUrl": "https://www.pngkey.com/png/full/46-466450_sweet-peas-vegetables-png.png",
+          "imageUrl":
+              "https://www.pngkey.com/png/full/46-466450_sweet-peas-vegetables-png.png",
           "currency": 17.9,
           "currencyType": "\$",
           "sellingUnit": "per kg",
@@ -233,33 +234,33 @@ abstract class MockUtil {
       "https://apnafamilystore.com/shop-online-banner.jpg",
     ];
   }
-}
 
-// {
-// "title": "Dairy",
-// "imageUrl":
-// "https://cdn.iconscout.com/icon/free/png-256/cheese-1806482-1534540.png",
-// "theme": 0xFFFEFFE5
-// },
-// {
-// "title": "Meat",
-// "imageUrl": "https://img.icons8.com/emoji/452/cut-of-meat-emoji.png",
-// "theme": 0xFFFCEFEB
-// },
-// {
-// "title": "Vegetables",
-// "imageUrl":
-// "https://i.pinimg.com/originals/fa/07/04/fa0704ba240c7b884b9b7ee94157fb7d.png",
-// "theme": 0xFFF9E3FD
-// },
-// {
-// "title": "Dairy",
-// "imageUrl":
-// "https://cdn.iconscout.com/icon/free/png-256/cheese-1806482-1534540.png",
-// "theme": 0xFFFEFFE5
-// },
-// {
-// "title": "Meat",
-// "imageUrl": "https://img.icons8.com/emoji/452/cut-of-meat-emoji.png",
-// "theme": 0xFFFCEFEB
-// }
+  static List<Map> getUsers() {
+    return [
+      {
+        "username": "user1",
+        "password": "password1",
+        "id": 1,
+        "email": "user1@email.com"
+      },
+      {
+        "username": "user2",
+        "password": "password2",
+        "id": 2,
+        "email": "user2@email.com"
+      },
+      {
+        "username": "user3",
+        "password": "password3",
+        "id": 3,
+        "email": "user3@email.com"
+      },
+      {
+        "username": "user4",
+        "password": "password4",
+        "id": 4,
+        "email": "user4@email.com"
+      },
+    ];
+  }
+}
