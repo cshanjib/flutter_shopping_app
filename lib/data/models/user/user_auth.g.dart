@@ -8,7 +8,7 @@ part of 'user_auth.dart';
 
 UserAuth _$UserAuthFromJson(Map<String, dynamic> json) {
   return UserAuth(
-    name: json['name'] as String,
+    username: json['username'] as String,
     assessToken: json['assessToken'] as String,
     refreshToken: (json['refreshToken'] as num)?.toDouble(),
     id: json['id'] as int,
@@ -17,7 +17,7 @@ UserAuth _$UserAuthFromJson(Map<String, dynamic> json) {
 }
 
 Map<String, dynamic> _$UserAuthToJson(UserAuth instance) => <String, dynamic>{
-      'name': instance.name,
+      'username': instance.username,
       'id': instance.id,
       'assessToken': instance.assessToken,
       'refreshToken': instance.refreshToken,

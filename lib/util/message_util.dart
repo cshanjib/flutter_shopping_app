@@ -11,7 +11,7 @@ class MessageUtil {
         toastBuilder: (context) =>
             _CustomMessage(message: message, error: error),
         duration: Duration(seconds: 4),
-        align: const Alignment(0, 0.99));
+        align: const Alignment(0, -0.99));
   }
 
   static void showSuccessMessage(String message) {
@@ -109,7 +109,7 @@ class _CustomMessage extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       child: Row(
         children: [
-          Icon(error ? Icons.info : Icons.error),
+          Icon(error ? Icons.info : Icons.error, color: Colors.white,),
           SizedBox(width: 10),
           Expanded(
             child: Text(

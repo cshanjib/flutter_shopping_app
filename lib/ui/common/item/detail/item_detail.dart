@@ -6,6 +6,9 @@ import 'package:flutter_shopping_app/constant/color.dart';
 import 'package:flutter_shopping_app/ui/common/form/custom_button.dart';
 import 'package:flutter_shopping_app/ui/common/incrementer.dart';
 import 'package:flutter_shopping_app/ui/common/item/data/model/product_item.dart';
+import 'package:flutter_shopping_app/util/dialog_util.dart';
+import 'package:flutter_shopping_app/util/message_util.dart';
+import 'package:flutter_shopping_app/util/pref_util.dart';
 
 class ItemDetail extends StatefulWidget {
   final ProductItem item;
@@ -127,17 +130,39 @@ class _ItemDetailState extends State<ItemDetail> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          IconButton(icon: Icon(Icons.favorite_border)),
+          IconButton(
+            icon: Icon(Icons.favorite_border),
+            onPressed: _addToFavourite,
+          ),
           CustomButton(
             label: "Add to cart",
             padding: EdgeInsets.symmetric(
               vertical: 15,
               horizontal: 60,
             ),
+            onPressed: _addToCart,
           ),
         ],
       ),
     );
+  }
+
+  _addToCart() {
+    if (PrefUtil.isUserLoggedIn()) {
+      // make api call to add it to cart
+      MessageUtil.showSuccessMessage("Added to the cart.");
+    } else {
+      DialogUtil.openLoginPopup(context);
+    }
+  }
+
+  _addToFavourite() {
+    if (PrefUtil.isUserLoggedIn()) {
+      //make api call to add favourite
+      MessageUtil.showSuccessMessage("Added to your favourites.");
+    } else {
+      DialogUtil.openLoginPopup(context);
+    }
   }
 
   Widget _addItemBenefits() {

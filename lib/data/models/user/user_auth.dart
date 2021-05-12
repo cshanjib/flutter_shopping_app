@@ -4,14 +4,14 @@ part 'user_auth.g.dart';
 
 @JsonSerializable()
 class UserAuth {
-  final String name;
+  final String username;
   final int id;
   final String assessToken;
   final double refreshToken;
   final String email;
 
   UserAuth({
-    this.name,
+    this.username,
     this.assessToken,
     this.refreshToken,
     this.id,
@@ -25,7 +25,7 @@ class UserAuth {
 
   String toString() {
     return '''{
-      "name": "$name",
+      "username": "$username",
     }''';
   }
 }
