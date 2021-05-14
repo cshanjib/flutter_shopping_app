@@ -5,8 +5,7 @@ import 'package:flutter_shopping_app/bloc/token/auth_token_cubit.dart';
 import 'package:flutter_shopping_app/constant/color.dart';
 import 'package:flutter_shopping_app/constant/dimension.dart';
 import 'package:flutter_shopping_app/ui/auth/login/bloc/login_cubit.dart';
-import 'package:flutter_shopping_app/ui/common/base/responsive_helper.dart';
-import 'package:flutter_shopping_app/ui/common/base/responsive_widget.dart';
+import 'package:flutter_shopping_app/helper/responsive_helper.dart';
 import 'package:flutter_shopping_app/ui/common/form/custom_button.dart';
 import 'package:flutter_shopping_app/ui/common/form/custom_text_field.dart';
 import 'package:get_it/get_it.dart';
@@ -55,7 +54,8 @@ class _LoginFormState extends State<LoginForm> {
 
   @override
   Widget build(BuildContext context) {
-    final bool _isMobile = ResponsiveWidget.isMobile(context);
+    final ResponsiveHelper _responsiveHelper =
+        ResponsiveHelper(context: context);
     return BlocProvider<LoginCubit>(
       create: (context) =>
           GetIt.I.get<LoginCubit>(param1: context.read<AuthTokenCubit>()),
@@ -77,15 +77,15 @@ class _LoginFormState extends State<LoginForm> {
                       _AppLoginTitle(),
                       RowOrColumn(
                         intrinsicRow: true,
-                        showRow: !_isMobile,
+                        showRow: !_responsiveHelper.isMobile,
                         children: [
                           ExpandedIf(
-                            expanded: !_isMobile,
-                            child: _AppIcon(),
+                            expanded: !_responsiveHelper.isMobile,
+                            child: _AppIcon(_responsiveHelper),
                             flex: 2,
                           ),
                           ExpandedIf(
-                            expanded: !_isMobile,
+                            expanded: !_responsiveHelper.isMobile,
                             child: _LoginForm(
                               usernameController: _usernameController,
                               passwordController: _passwordController,
@@ -219,10 +219,16 @@ class _LoginForm extends StatelessWidget {
 }
 
 class _AppIcon extends StatelessWidget {
+  final ResponsiveHelper _responsiveHelper;
+
+  const _AppIcon(ResponsiveHelper responsiveHelper, {Key key})
+      : _responsiveHelper = responsiveHelper,
+        super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return _clipBackground(
-      clip: !ResponsiveWidget.isMobile(context),
+      clip: !_responsiveHelper.isMobile,
       child: Column(
         children: [
           SizedBox(

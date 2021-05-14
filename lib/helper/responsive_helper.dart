@@ -1,6 +1,79 @@
+import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_shopping_app/constant/dimension.dart';
+
+class ResponsiveHelper {
+  final Size deviceSize;
+
+  ResponsiveHelper({BuildContext context, Size size})
+      : assert(context != null || size != null),
+        deviceSize = size ?? MediaQuery.of(context).size;
+
+  bool get isDesktop => deviceSize.width >= WIDTH_DESKTOP;
+
+  double get optimalDeviceWidth => min(deviceSize.width, WIDTH_MAX_APP_WIDTH);
+
+  bool isTablet({includeMobile: false}) =>
+      deviceSize.width < WIDTH_DESKTOP &&
+      (deviceSize.width > WIDTH_MOBILE || includeMobile);
+
+  T value<T>({
+    @required T mobile,
+    T tablet,
+    @required T desktop,
+  }) =>
+      isMobile
+          ? mobile
+          : isDesktop
+              ? desktop
+              : (tablet ?? mobile);
+
+  double incremental(double mobile, {double increment = 2}) => isMobile
+      ? mobile
+      : isDesktop
+          ? mobile + (2 * increment)
+          : mobile + increment;
+
+  bool get isMobile => deviceSize.width <= WIDTH_MOBILE;
+
+  double get defaultSmallGap => isDesktop
+      ? GAP_X_NORMAL
+      : isMobile
+          ? GAP_XX_SMALL
+          : GAP_X_NORMAL;
+
+  double get defaultGap => isDesktop
+      ? GAP_NORMAL
+      : isMobile
+          ? GAP_XXX_NORMAL
+          : GAP_XX_NORMAL;
+
+  double get smallFontSize => isDesktop
+      ? FONT_X_SMALL
+      : isMobile
+          ? FONT_XXX_SMALL
+          : FONT_XX_SMALL;
+
+  double get normalFontSize => isDesktop
+      ? FONT_SMALL
+      : isMobile
+          ? FONT_XX_SMALL
+          : FONT_X_SMALL;
+
+  double get mediumFontSize => isDesktop
+      ? FONT_NORMAL
+      : isMobile
+          ? FONT_X_SMALL
+          : FONT_SMALL;
+
+  double get largeFontSize => isDesktop
+      ? FONT_LARGE
+      : isMobile
+          ? FONT_SMALL
+          : FONT_NORMAL;
+}
 
 class RowOrColumn extends StatelessWidget {
   final bool showRow;
@@ -61,7 +134,8 @@ class ExpandedIf extends StatelessWidget {
   final Widget child;
   final int flex;
 
-  ExpandedIf({this.expanded: true, this.child, Key key, this.flex: 1}) : super(key: key);
+  ExpandedIf({this.expanded: true, this.child, Key key, this.flex: 1})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -126,6 +200,34 @@ class PaddingSwitch extends StatelessWidget {
     return Padding(
       child: child,
       padding: switchIf ? switchedPadding : padding,
+    );
+  }
+}
+
+class ResponsiveWidget extends StatelessWidget {
+  final Widget mobile;
+  final Widget tablet;
+  final Widget desktop;
+
+  const ResponsiveWidget({
+    Key key,
+    @required this.mobile,
+    this.tablet,
+    @required this.desktop,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        if (constraints.maxWidth >= WIDTH_DESKTOP) {
+          return desktop;
+        } else if (constraints.maxWidth > WIDTH_MOBILE) {
+          return tablet ?? mobile;
+        } else {
+          return mobile;
+        }
+      },
     );
   }
 }

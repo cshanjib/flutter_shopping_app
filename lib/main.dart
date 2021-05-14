@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_shopping_app/bloc/token/auth_token_cubit.dart';
 import 'package:flutter_shopping_app/constant/color.dart';
 import 'package:flutter_shopping_app/injectable/config.dart';
+import 'package:flutter_shopping_app/helper/responsive_helper.dart';
 import 'package:flutter_shopping_app/ui/common/custom_drawer.dart';
 import 'package:flutter_shopping_app/ui/dashboard/dashboard.dart';
 import 'package:flutter_shopping_app/util/pref_util.dart';
@@ -20,6 +21,8 @@ void main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
+
     return MultiBlocProvider(
       providers: [
         BlocProvider<AuthTokenCubit>(
