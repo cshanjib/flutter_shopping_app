@@ -39,10 +39,10 @@ class ResponsiveHelper {
   bool get isMobile => deviceSize.width <= WIDTH_MOBILE;
 
   double get defaultSmallGap => isDesktop
-      ? GAP_X_NORMAL
+      ? GAP_XXX_NORMAL
       : isMobile
-          ? GAP_XX_SMALL
-          : GAP_X_NORMAL;
+          ? GAP_X_SMALL
+          : GAP_SMALL;
 
   double get defaultGap => isDesktop
       ? GAP_NORMAL
