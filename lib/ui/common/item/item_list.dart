@@ -32,7 +32,7 @@ class ItemList extends StatelessWidget {
               GetIt.instance.get<ProductItemCubit>()..loadProducts(type: type),
           child: SizedBox(
             height: _respHelper.value<double>(
-                mobile: 164, desktop: 222, tablet: 194),
+                mobile: 164, desktop: 224, tablet: 194),
             child: BlocBuilder<ProductItemCubit, ProductItemState>(
                 builder: (context, state) {
               if (state.hasNoData)
