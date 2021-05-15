@@ -2,10 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_shopping_app/ui/auth/login/login.dart';
 
 class DialogUtil {
-  static const String SVG_ATTENTION =
-      'assets/images/svgs/dialogs/attention.svg';
-  static const String SVG_CONFIRM = 'assets/images/svgs/dialogs/confirm.svg';
-
   static Future openLoginPopup(BuildContext context, {dismissible: false}) {
     return showDialog(
       context: context,
