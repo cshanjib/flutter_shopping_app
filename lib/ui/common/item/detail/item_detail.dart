@@ -13,8 +13,9 @@ import 'package:flutter_shopping_app/util/pref_util.dart';
 
 class ItemDetail extends StatefulWidget {
   final ProductItem item;
+  final int id;
 
-  const ItemDetail(this.item, {Key key}) : super(key: key);
+  const ItemDetail(this.item, {Key key, this.id}) : super(key: key);
 
   @override
   _ItemDetailState createState() => _ItemDetailState();
@@ -113,7 +114,6 @@ class _ItemDetailState extends State<ItemDetail> {
                             textAlign: TextAlign.justify,
                           ),
                           if (widget.item.hasBenefits) _addItemBenefits(),
-
                         ],
                       ),
                     ),

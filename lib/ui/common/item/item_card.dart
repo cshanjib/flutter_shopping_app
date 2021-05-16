@@ -17,7 +17,7 @@ class ItemCard extends StatelessWidget {
     //   MaterialPageRoute(builder: (context) => ItemDetail(item)),
     // );
 
-    Navigator.pushNamed(context, '/details/${item.id}', arguments: item);
+    Navigator.pushNamed(context, '/items/${item.id}', arguments: item);
   }
 
   @override

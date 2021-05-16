@@ -37,13 +37,12 @@ class MyApp extends StatelessWidget {
             return MaterialPageRoute(
                 builder: (context) => Dashboard(), settings: settings);
           }
-          // Handle '/details/:id'
           var uri = Uri.parse(settings.name);
           if (uri.pathSegments.length == 2 &&
-              uri.pathSegments.first == 'details') {
-            var id = uri.pathSegments[1];
+              uri.pathSegments.first == 'items') {
+            int id = int.tryParse(uri.pathSegments[1]) ;
             return MaterialPageRoute(
-                builder: (context) => ItemDetail(settings.arguments),
+                builder: (context) => ItemDetail(settings.arguments, id: id,),
                 settings: settings);
           }
 
