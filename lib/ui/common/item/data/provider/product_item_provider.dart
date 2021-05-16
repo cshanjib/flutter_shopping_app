@@ -8,6 +8,8 @@ abstract class ProductItemProvider {
   Future<List<ProductItem>> getTopSellingProducts();
 
   Future<List<ProductItem>> getFeaturedProducts();
+
+  Future<ProductItem> getProductInfo(int id);
 }
 
 @Named("mock")
@@ -41,6 +43,21 @@ class MockProductItemProvider implements ProductItemProvider {
     return Future.value(
         (_data['data'] as List)?.map((e) => ProductItem.fromJson(e))?.toList());
   }
+
+  @override
+  Future<ProductItem> getProductInfo(int id) async {
+    //add some delay to give the feel of api call
+    await Future.delayed(Duration(seconds: 3));
+    final List _data = [
+      ...MockUtil.getTopSellingItems()['data'],
+      ...MockUtil.getFeaturedItems()['data'],
+      ...MockUtil.getTrendingItems()['data']
+    ];
+    final Map _item = _data.firstWhere((el) => int.tryParse(el["id"]) == id,
+        orElse: () => null);
+    if (_item == null) throw Exception("Item not found.");
+    return ProductItem.fromJson(_item);
+  }
 }
 
 @Singleton(as: ProductItemProvider)
@@ -72,5 +89,11 @@ class RealProductItemProvider implements ProductItemProvider {
     final Map _data = MockUtil.getTopSellingItems();
     return Future.value(
         (_data['data'] as List)?.map((e) => ProductItem.fromJson(e))?.toList());
+  }
+
+  @override
+  Future<ProductItem> getProductInfo(int id) {
+    // TODO: implement getProductInfo
+    throw UnimplementedError();
   }
 }

@@ -19,4 +19,8 @@ class ProductItemRepository {
                 ? _provider.getTrendingProducts()
                 : Future.value(null);
   }
+
+  Future<ProductItem> getProductDetail(int id) async {
+    return await _provider.getProductInfo(id);
+  }
 }
