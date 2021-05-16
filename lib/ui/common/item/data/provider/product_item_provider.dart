@@ -53,7 +53,8 @@ class MockProductItemProvider implements ProductItemProvider {
       ...MockUtil.getFeaturedItems()['data'],
       ...MockUtil.getTrendingItems()['data']
     ];
-    final Map _item = _data.firstWhere((el) => int.tryParse(el["id"]) == id,
+    final Map _item = _data.firstWhere(
+        (el) => el["id"] != null && int.tryParse("${el["id"]}") == id,
         orElse: () => null);
     if (_item == null) throw Exception("Item not found.");
     return ProductItem.fromJson(_item);

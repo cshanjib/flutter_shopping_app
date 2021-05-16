@@ -11,17 +11,20 @@ part 'item_detail_state.dart';
 class ItemDetailCubit extends Cubit<ItemDetailState> {
   final ProductItemRepository _productRepository;
 
-  ItemDetailCubit(ProductItemRepository repository,
-      {@factoryParam ProductItem product})
+  ItemDetailCubit(ProductItemRepository repository)
       : _productRepository = repository,
         super(ItemDetailState.initial());
 
-  void loadItemDetail({int id}) async {
+  void loadItemDetail(int id, {ProductItem item}) async {
     try {
+      if (item != null) {
+        emit(state.update(loading: false, item: item));
+        return;
+      }
+
       emit(state.update(loading: true));
 
-      ProductItem _product =
-          await _productRepository.getProductDetail(id);
+      ProductItem _product = await _productRepository.getProductDetail(id);
 
       emit(state.update(loading: false, item: _product));
     } catch (e) {
