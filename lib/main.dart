@@ -6,6 +6,7 @@ import 'package:flutter_shopping_app/constant/color.dart';
 import 'package:flutter_shopping_app/injectable/config.dart';
 import 'package:flutter_shopping_app/helper/responsive_helper.dart';
 import 'package:flutter_shopping_app/ui/common/custom_drawer.dart';
+import 'package:flutter_shopping_app/ui/common/item/detail/item_detail.dart';
 import 'package:flutter_shopping_app/ui/dashboard/dashboard.dart';
 import 'package:flutter_shopping_app/util/pref_util.dart';
 import 'package:get_it/get_it.dart';
@@ -21,8 +22,6 @@ void main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
-
     return MultiBlocProvider(
       providers: [
         BlocProvider<AuthTokenCubit>(
@@ -33,21 +32,29 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Shopping App Demo',
         debugShowCheckedModeBanner: false,
+        onGenerateRoute: (settings) {
+          if (settings.name == '/') {
+            return MaterialPageRoute(
+                builder: (context) => Dashboard(), settings: settings);
+          }
+          // Handle '/details/:id'
+          var uri = Uri.parse(settings.name);
+          if (uri.pathSegments.length == 2 &&
+              uri.pathSegments.first == 'details') {
+            var id = uri.pathSegments[1];
+            return MaterialPageRoute(
+                builder: (context) => ItemDetail(settings.arguments),
+                settings: settings);
+          }
+
+          return MaterialPageRoute(builder: (context) => Text("404"));
+        },
+
         builder: BotToastInit(),
         navigatorObservers: [BotToastNavigatorObserver()],
         //set up bot toast
         theme: ThemeData(
           primarySwatch: ThemeWhite,
-        ),
-        home: Scaffold(
-          backgroundColor: Colors.white,
-          body: Dashboard(),
-          appBar: AppBar(
-            centerTitle: false,
-            title: Text("Shopping App"),
-            elevation: 0,
-          ),
-          drawer: CustomDrawer(),
         ),
       ),
     );

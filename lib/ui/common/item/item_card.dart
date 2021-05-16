@@ -12,10 +12,12 @@ class ItemCard extends StatelessWidget {
   const ItemCard({Key key, this.item, this.responsiveHelper}) : super(key: key);
 
   _goToDetailPage(context) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => ItemDetail(item)),
-    );
+    // Navigator.push(
+    //   context,
+    //   MaterialPageRoute(builder: (context) => ItemDetail(item)),
+    // );
+
+    Navigator.pushNamed(context, '/details/${item.id}', arguments: item);
   }
 
   @override
@@ -24,7 +26,8 @@ class ItemCard extends StatelessWidget {
       onTap: () => _goToDetailPage(context),
       hoverColor: Colors.transparent,
       child: Container(
-        width: responsiveHelper.value<double>(mobile: 120, desktop: 200, tablet: 160),
+        width: responsiveHelper.value<double>(
+            mobile: 120, desktop: 200, tablet: 160),
         padding: const EdgeInsets.all(10),
         margin: EdgeInsets.symmetric(
             horizontal: responsiveHelper.defaultSmallGap, vertical: 2),
@@ -42,23 +45,32 @@ class ItemCard extends StatelessWidget {
           children: [
             Image.network(
               item.imageUrl,
-              height: responsiveHelper.value<double>(mobile: 100, desktop: 140, tablet: 120),
+              height: responsiveHelper.value<double>(
+                  mobile: 100, desktop: 140, tablet: 120),
             ),
-            SizedBox(height: responsiveHelper.incremental(4, increment: 4),),
+            SizedBox(
+              height: responsiveHelper.incremental(4, increment: 4),
+            ),
             Align(
               child: Text(
                 item.name,
-                style: TextStyle(fontSize: responsiveHelper.normalFontSize, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    fontSize: responsiveHelper.normalFontSize,
+                    fontWeight: FontWeight.bold),
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
               ),
               alignment: Alignment.centerLeft,
             ),
-            SizedBox(height: responsiveHelper.incremental(4),),
+            SizedBox(
+              height: responsiveHelper.incremental(4),
+            ),
             Row(
               children: [
                 Text(item.price,
-                    style: TextStyle(fontSize: responsiveHelper.normalFontSize, color: ThemeTextColor)),
+                    style: TextStyle(
+                        fontSize: responsiveHelper.normalFontSize,
+                        color: ThemeTextColor)),
                 SizedBox(
                   width: responsiveHelper.incremental(4),
                 ),
@@ -66,7 +78,9 @@ class ItemCard extends StatelessWidget {
                   child: Text(
                     item.sellingUnit,
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(fontSize: responsiveHelper.smallFontSize, color: ThemeTextColorLight),
+                    style: TextStyle(
+                        fontSize: responsiveHelper.smallFontSize,
+                        color: ThemeTextColorLight),
                   ),
                 ),
               ],
