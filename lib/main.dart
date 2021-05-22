@@ -1,11 +1,10 @@
+import 'package:beamer/beamer.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_shopping_app/bloc/token/auth_token_cubit.dart';
 import 'package:flutter_shopping_app/constant/color.dart';
 import 'package:flutter_shopping_app/injectable/config.dart';
-import 'package:flutter_shopping_app/helper/responsive_helper.dart';
-import 'package:flutter_shopping_app/ui/common/custom_drawer.dart';
 import 'package:flutter_shopping_app/ui/common/item/detail/item_detail.dart';
 import 'package:flutter_shopping_app/ui/dashboard/dashboard.dart';
 import 'package:flutter_shopping_app/util/pref_util.dart';
@@ -15,11 +14,21 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // load user stored data if any
   await PrefUtil.loadUserAuthData();
+  Beamer.setPathUrlStrategy();
   configureDependencies();
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  final routerDelegate = BeamerDelegate(
+      navigatorObservers: [BotToastNavigatorObserver()],
+      locationBuilder: BeamerLocationBuilder(
+        beamLocations: [
+          DashboardLocation(),
+          ItemDetailLocation(),
+        ],
+      ));
+
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -29,32 +38,14 @@ class MyApp extends StatelessWidget {
           lazy: false,
         )
       ],
-      child: MaterialApp(
+      child: MaterialApp.router(
         title: 'Shopping App Demo',
         debugShowCheckedModeBanner: false,
-        onGenerateRoute: (settings) {
-          if (settings.name == '/') {
-            return MaterialPageRoute(
-                builder: (context) => Dashboard(), settings: settings);
-          }
-          var uri = Uri.parse(settings.name);
-          if (uri.pathSegments.length == 2 &&
-              uri.pathSegments.first == 'items') {
-            int id = int.tryParse(uri.pathSegments[1]);
-            return MaterialPageRoute(
-                builder: (context) => ItemDetailPage(
-                      settings.arguments,
-                      id: id,
-                    ),
-                settings: settings);
-          }
-
-          return MaterialPageRoute(builder: (context) => Text("404"));
-        },
-
+        routeInformationParser: BeamerParser(),
+        backButtonDispatcher:
+            BeamerBackButtonDispatcher(delegate: routerDelegate),
         builder: BotToastInit(),
-        navigatorObservers: [BotToastNavigatorObserver()],
-        //set up bot toast
+        routerDelegate: routerDelegate,
         theme: ThemeData(
           primarySwatch: ThemeWhite,
         ),

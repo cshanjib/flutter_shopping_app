@@ -1,3 +1,4 @@
+import 'package:beamer/beamer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_shopping_app/constant/color.dart';
@@ -11,13 +12,8 @@ class ItemCard extends StatelessWidget {
 
   const ItemCard({Key key, this.item, this.responsiveHelper}) : super(key: key);
 
-  _goToDetailPage(context) {
-    // Navigator.push(
-    //   context,
-    //   MaterialPageRoute(builder: (context) => ItemDetail(item)),
-    // );
-
-    Navigator.pushNamed(context, '/items/${item.id}', arguments: item);
+  _goToDetailPage(BuildContext context) {
+    context.beamToNamed('/items/${item.id}', data: {'item': item});
   }
 
   @override

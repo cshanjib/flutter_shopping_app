@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'package:beamer/beamer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -15,6 +16,26 @@ import 'package:flutter_shopping_app/util/message_util.dart';
 import 'package:flutter_shopping_app/util/pref_util.dart';
 import 'package:get_it/get_it.dart';
 
+class ItemDetailLocation extends BeamLocation {
+  ItemDetailLocation({BeamState state}) : super(state);
+
+  @override
+  List<String> get pathBlueprints => ['/items/:itemId'];
+
+  @override
+  List<BeamPage> buildPages(BuildContext context, BeamState state) {
+    final data = state.data['item'];
+    return [
+      BeamPage(
+        key: ValueKey('item-${int.tryParse(state.pathParameters['itemId'])}'),
+        title: 'Items',
+        child: ItemDetailPage(data,
+            id: int.tryParse(state.pathParameters['itemId'])),
+      )
+    ];
+  }
+}
+
 class ItemDetailPage extends StatelessWidget {
   final ProductItem item;
   final int id;
@@ -29,7 +50,7 @@ class ItemDetailPage extends StatelessWidget {
         child: Scaffold(
           body: BlocProvider(
             create: (context) =>
-                GetIt.I.get<ItemDetailCubit>()..loadItemDetail(id),
+                GetIt.I.get<ItemDetailCubit>()..loadItemDetail(id, item: item),
             child: BlocBuilder<ItemDetailCubit, ItemDetailState>(
                 builder: (context, ItemDetailState state) {
               return ItemDetail(state, id);
@@ -259,10 +280,10 @@ class _ItemDetailState extends State<ItemDetail> {
   }
 
   _goBack(BuildContext context) {
-    if (Navigator.of(context).canPop()) {
-      Navigator.of(context).pop();
+    if (context.canBeamBack) {
+      context.beamBack();
     } else {
-      Navigator.pushNamed(context, '/');
+      context.beamToNamed('/');
     }
   }
 

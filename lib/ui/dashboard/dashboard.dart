@@ -1,3 +1,4 @@
+import 'package:beamer/beamer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_shopping_app/constant/enum.dart';
@@ -8,6 +9,24 @@ import 'package:flutter_shopping_app/ui/common/custom_drawer.dart';
 import 'package:flutter_shopping_app/ui/common/form/custom_text_field.dart';
 import 'package:flutter_shopping_app/ui/common/item/item_list.dart';
 import 'package:flutter_shopping_app/ui/dashboard/user_info.dart';
+
+class DashboardLocation extends BeamLocation {
+  DashboardLocation({BeamState state}) : super(state);
+
+  @override
+  List<String> get pathBlueprints => ['/'];
+
+  @override
+  List<BeamPage> buildPages(BuildContext context, BeamState state) {
+    return [
+      BeamPage(
+        key: ValueKey('home'),
+        title: 'Home',
+        child: Dashboard(),
+      )
+    ];
+  }
+}
 
 class Dashboard extends StatelessWidget {
   @override
