@@ -9,6 +9,8 @@ import 'package:flutter_shopping_app/ui/common/custom_drawer.dart';
 import 'package:flutter_shopping_app/ui/common/form/custom_text_field.dart';
 import 'package:flutter_shopping_app/ui/common/item/item_list.dart';
 import 'package:flutter_shopping_app/ui/dashboard/user_info.dart';
+import 'package:flutter_shopping_app/util/dialog_util.dart';
+import 'package:flutter_shopping_app/util/pref_util.dart';
 
 class DashboardLocation extends BeamLocation {
   DashboardLocation({BeamState state}) : super(state);
@@ -29,6 +31,15 @@ class DashboardLocation extends BeamLocation {
 }
 
 class Dashboard extends StatelessWidget {
+  _goToCart(BuildContext context) {
+    // ask user to login if they are not already
+    if (PrefUtil.isUserLoggedIn()) {
+      context.beamToNamed('/cart');
+    } else {
+      DialogUtil.openLoginPopup(context);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,11 +48,17 @@ class Dashboard extends StatelessWidget {
         centerTitle: false,
         title: Text("Shopping App"),
         elevation: 0,
+        actions: [
+          IconButton(
+              icon: Icon(Icons.shopping_cart),
+              onPressed: () => _goToCart(context))
+        ],
       ),
       drawer: CustomDrawer(),
       body: SingleChildScrollView(
         child: AppWrapper(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               UserInfo(),
               Padding(
