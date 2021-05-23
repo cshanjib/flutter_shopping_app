@@ -6,6 +6,30 @@ part of 'product_item.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+ProductItemPaged _$ProductItemPagedFromJson(Map<String, dynamic> json) {
+  return ProductItemPaged(
+    data: (json['data'] as List)
+        ?.map((e) =>
+            e == null ? null : ProductItem.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    hasNext: json['has_next'] as bool,
+    hasPrev: json['has_prev'] as bool,
+    page: json['page'] as int,
+    dataCount: json['data_count'] as int,
+    totalPages: json['total_pages'] as int,
+  );
+}
+
+Map<String, dynamic> _$ProductItemPagedToJson(ProductItemPaged instance) =>
+    <String, dynamic>{
+      'data': instance.data,
+      'has_next': instance.hasNext,
+      'has_prev': instance.hasPrev,
+      'page': instance.page,
+      'data_count': instance.dataCount,
+      'total_pages': instance.totalPages,
+    };
+
 ProductItem _$ProductItemFromJson(Map<String, dynamic> json) {
   return ProductItem(
     name: json['name'] as String,

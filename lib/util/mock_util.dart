@@ -220,7 +220,7 @@ abstract class MockUtil {
           "currencyType": "\$",
           "sellingUnit": "per piece",
           "discount": 5,
-          "id": 12,
+          "id": 21,
           "rating": 4.5,
           "featured": true,
           "trending": true,
@@ -244,7 +244,7 @@ abstract class MockUtil {
           "currencyType": "\$",
           "sellingUnit": "per piece",
           "discount": 5,
-          "id": 12,
+          "id": 22,
           "rating": 4.5,
           "featured": false,
           "trending": true,
@@ -467,7 +467,7 @@ abstract class MockUtil {
           "currencyType": "\$",
           "sellingUnit": "per piece",
           "discount": 5,
-          "id": 12,
+          "id": 21,
           "rating": 4.5,
           "featured": true,
           "trending": true,
@@ -481,7 +481,6 @@ abstract class MockUtil {
             "Iron deficiency anemia is quite common. It occurs when you don’t get enough iron from the foods you eat.",
             "A healthy diet rich in fruits and vegetables may help prevent some cancers",
             "Lemons are made up of about 10% carbs, mostly in the form of soluble fiber and simple sugars.",
-
           ]
         },
         {
@@ -492,14 +491,13 @@ abstract class MockUtil {
           "currencyType": "\$",
           "sellingUnit": "per piece",
           "discount": 5,
-          "id": 12,
+          "id": 22,
           "rating": 4.5,
           "featured": false,
           "trending": true,
           "selling": true,
           "description":
           "Honey is a sweet, viscous food substance made by honey bees and some related insects.[1] Bees produce honey from the sugary secretions of plants (floral nectar) or from secretions of other insects (such as honeydew), by regurgitation, enzymatic activity, and water evaporation.",
-
         },
         {
           "name": "Cabbages",
@@ -716,7 +714,7 @@ abstract class MockUtil {
           "currencyType": "\$",
           "sellingUnit": "per piece",
           "discount": 5,
-          "id": 12,
+          "id": 21,
           "rating": 4.5,
           "featured": true,
           "trending": true,
@@ -730,7 +728,6 @@ abstract class MockUtil {
             "Iron deficiency anemia is quite common. It occurs when you don’t get enough iron from the foods you eat.",
             "A healthy diet rich in fruits and vegetables may help prevent some cancers",
             "Lemons are made up of about 10% carbs, mostly in the form of soluble fiber and simple sugars.",
-
           ]
         },
         {
@@ -741,14 +738,13 @@ abstract class MockUtil {
           "currencyType": "\$",
           "sellingUnit": "per piece",
           "discount": 5,
-          "id": 12,
+          "id": 22,
           "rating": 4.5,
           "featured": false,
           "trending": true,
           "selling": true,
           "description":
           "Honey is a sweet, viscous food substance made by honey bees and some related insects.[1] Bees produce honey from the sugary secretions of plants (floral nectar) or from secretions of other insects (such as honeydew), by regurgitation, enzymatic activity, and water evaporation.",
-
         },
         {
           "name": "Cabbages",
@@ -965,7 +961,7 @@ abstract class MockUtil {
           "currencyType": "\$",
           "sellingUnit": "per piece",
           "discount": 5,
-          "id": 12,
+          "id": 21,
           "rating": 4.5,
           "featured": true,
           "trending": true,
@@ -979,7 +975,6 @@ abstract class MockUtil {
             "Iron deficiency anemia is quite common. It occurs when you don’t get enough iron from the foods you eat.",
             "A healthy diet rich in fruits and vegetables may help prevent some cancers",
             "Lemons are made up of about 10% carbs, mostly in the form of soluble fiber and simple sugars.",
-
           ]
         },
         {
@@ -990,15 +985,15 @@ abstract class MockUtil {
           "currencyType": "\$",
           "sellingUnit": "per piece",
           "discount": 5,
-          "id": 12,
+          "id": 22,
           "rating": 4.5,
           "featured": false,
           "trending": true,
           "selling": true,
           "description":
           "Honey is a sweet, viscous food substance made by honey bees and some related insects.[1] Bees produce honey from the sugary secretions of plants (floral nectar) or from secretions of other insects (such as honeydew), by regurgitation, enzymatic activity, and water evaporation.",
+        }
 
-        },
       ]
     };
   }

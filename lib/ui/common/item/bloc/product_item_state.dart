@@ -6,7 +6,9 @@ class ProductItemState extends Equatable {
   final bool init;
   final String error;
 
-  final List<ProductItem> items;
+  final ProductItemPaged pagedItem;
+
+  List<ProductItem> get items => pagedItem.data;
 
   bool get hasError => error != null && error.isNotEmpty;
 
@@ -16,20 +18,24 @@ class ProductItemState extends Equatable {
 
   int get size => items?.length ?? 0;
 
-  const ProductItemState({this.loading, this.error, this.init, this.items});
+  const ProductItemState({this.loading, this.error, this.init, this.pagedItem});
 
   @override
-  List<Object> get props => [loading, error, init, error];
+  List<Object> get props => [loading, error, init, error, pagedItem];
 
   factory ProductItemState.initial({loading}) {
     return ProductItemState(
-        loading: loading ?? true, error: "", init: false, items: []);
+        loading: loading ?? true,
+        error: "",
+        init: false,
+        pagedItem: ProductItemPaged.initial());
   }
 
-  ProductItemState update({bool loading, bool init, items, error}) {
+  ProductItemState update(
+      {bool loading, bool init, ProductItemPaged pagedItem, error}) {
     return ProductItemState(
       loading: loading ?? this.loading,
-      items: items ?? this.items,
+      pagedItem: pagedItem ?? this.pagedItem,
       init: init ?? this.init,
       error: error ?? "",
     );

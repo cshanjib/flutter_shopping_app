@@ -10,13 +10,14 @@ class ProductItemRepository {
   const ProductItemRepository({@Named("mock") ProductItemProvider provider})
       : _provider = provider;
 
-  Future<List<ProductItem>> getProductList({ITEM_TYPE type}) async {
+  Future<ProductItemPaged> getProductList(int page,
+      {ITEM_TYPE type, int perPage}) async {
     return type == ITEM_TYPE.featured
-        ? _provider.getFeaturedProducts()
+        ? _provider.getFeaturedProducts(page, perPage: perPage)
         : type == ITEM_TYPE.topSelling
-            ? _provider.getTopSellingProducts()
+            ? _provider.getTopSellingProducts(page, perPage: perPage)
             : type == ITEM_TYPE.trending
-                ? _provider.getTrendingProducts()
+                ? _provider.getTrendingProducts(page, perPage: perPage)
                 : Future.value(null);
   }
 

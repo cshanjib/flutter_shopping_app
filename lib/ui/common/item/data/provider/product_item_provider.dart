@@ -1,13 +1,16 @@
+import 'dart:math';
+
+import 'package:flutter_shopping_app/data/models/paginate.dart';
 import 'package:flutter_shopping_app/ui/common/item/data/model/product_item.dart';
 import 'package:flutter_shopping_app/util/mock_util.dart';
 import 'package:injectable/injectable.dart';
 
 abstract class ProductItemProvider {
-  Future<List<ProductItem>> getTrendingProducts();
+  Future<ProductItemPaged> getTrendingProducts(int page, {perPage});
 
-  Future<List<ProductItem>> getTopSellingProducts();
+  Future<ProductItemPaged> getFeaturedProducts(int page, {perPage});
 
-  Future<List<ProductItem>> getFeaturedProducts();
+  Future<ProductItemPaged> getTopSellingProducts(int page, {perPage});
 
   Future<ProductItem> getProductInfo(int id);
 }
@@ -18,41 +21,79 @@ class MockProductItemProvider implements ProductItemProvider {
   const MockProductItemProvider();
 
   @override
-  Future<List<ProductItem>> getTrendingProducts() async {
+  Future<ProductItemPaged> getTrendingProducts(int page, {perPage}) async {
     //add some delay to give the feel of api call
     await Future.delayed(Duration(seconds: 3));
-    final Map _data = MockUtil.getTrendingItems();
-    return Future.value(
-        (_data['data'] as List)?.map((e) => ProductItem.fromJson(e))?.toList());
+    final List _data = MockUtil.getAllItems()["data"];
+    final _filtered =
+        _data.where((d) => d['trending'] != null && d['trending']).toList();
+    final int _perPage = perPage ?? Paginate.DEFAULT_ITEM_PER_PAGE;
+    final int _offset = (page - 1) * _perPage;
+    final int _totalSize = (_filtered.length / _perPage).ceil();
+
+    return Future.value(ProductItemPaged(
+        page: page,
+        data: _filtered
+            .sublist(_offset, min(_offset + _perPage, _filtered.length))
+            ?.map((e) => ProductItem.fromJson(e))
+            ?.toList(),
+        hasNext: page < _totalSize,
+        hasPrev: page > 1,
+        dataCount: _filtered.length,
+        totalPages: _totalSize));
   }
 
   @override
-  Future<List<ProductItem>> getFeaturedProducts() async {
+  Future<ProductItemPaged> getFeaturedProducts(int page, {perPage}) async {
     //add some delay to give the feel of api call
     await Future.delayed(Duration(seconds: 3));
-    final Map _data = MockUtil.getFeaturedItems();
-    return Future.value(
-        (_data['data'] as List)?.map((e) => ProductItem.fromJson(e))?.toList());
+    final List _data = MockUtil.getAllItems()["data"];
+    final _filtered =
+        _data.where((d) => d['featured'] != null && d['featured']).toList();
+    final int _perPage = perPage ?? Paginate.DEFAULT_ITEM_PER_PAGE;
+    final int _offset = (page - 1) * _perPage;
+    final int _totalSize = (_filtered.length / _perPage).ceil();
+
+    return Future.value(ProductItemPaged(
+        page: page,
+        data: _filtered
+            .sublist(_offset, min(_offset + _perPage, _filtered.length))
+            ?.map((e) => ProductItem.fromJson(e))
+            ?.toList(),
+        hasNext: page < _totalSize,
+        hasPrev: page > 1,
+        dataCount: _filtered.length,
+        totalPages: _totalSize));
   }
 
   @override
-  Future<List<ProductItem>> getTopSellingProducts() async {
+  Future<ProductItemPaged> getTopSellingProducts(int page, {perPage}) async {
     //add some delay to give the feel of api call
     await Future.delayed(Duration(seconds: 3));
-    final Map _data = MockUtil.getTopSellingItems();
-    return Future.value(
-        (_data['data'] as List)?.map((e) => ProductItem.fromJson(e))?.toList());
+    final List _data = MockUtil.getAllItems()["data"];
+    final _filtered =
+        _data.where((d) => d['selling'] != null && d['selling']).toList();
+    final int _perPage = perPage ?? Paginate.DEFAULT_ITEM_PER_PAGE;
+    final int _offset = (page - 1) * _perPage;
+    final int _totalSize = (_filtered.length / _perPage).ceil();
+
+    return Future.value(ProductItemPaged(
+        page: page,
+        data: _filtered
+            .sublist(_offset, min(_offset + _perPage, _filtered.length))
+            ?.map((e) => ProductItem.fromJson(e))
+            ?.toList(),
+        hasNext: page < _totalSize,
+        hasPrev: page > 1,
+        dataCount: _filtered.length,
+        totalPages: _totalSize));
   }
 
   @override
   Future<ProductItem> getProductInfo(int id) async {
     //add some delay to give the feel of api call
     await Future.delayed(Duration(seconds: 3));
-    final List _data = [
-      ...MockUtil.getTopSellingItems()['data'],
-      ...MockUtil.getFeaturedItems()['data'],
-      ...MockUtil.getTrendingItems()['data']
-    ];
+    final List _data = MockUtil.getAllItems()['data'];
     final Map _item = _data.firstWhere(
         (el) => el["id"] != null && int.tryParse("${el["id"]}") == id,
         orElse: () => null);
@@ -66,35 +107,26 @@ class RealProductItemProvider implements ProductItemProvider {
   const RealProductItemProvider();
 
   @override
-  Future<List<ProductItem>> getTrendingProducts() async {
-    //add some delay to give the feel of api call
-    await Future.delayed(Duration(seconds: 3));
-    final Map _data = MockUtil.getTrendingItems();
-    return Future.value(
-        (_data['data'] as List)?.map((e) => ProductItem.fromJson(e))?.toList());
-  }
-
-  @override
-  Future<List<ProductItem>> getFeaturedProducts() async {
-    //add some delay to give the feel of api call
-    await Future.delayed(Duration(seconds: 3));
-    final Map _data = MockUtil.getFeaturedItems();
-    return Future.value(
-        (_data['data'] as List)?.map((e) => ProductItem.fromJson(e))?.toList());
-  }
-
-  @override
-  Future<List<ProductItem>> getTopSellingProducts() async {
-    //add some delay to give the feel of api call
-    await Future.delayed(Duration(seconds: 3));
-    final Map _data = MockUtil.getTopSellingItems();
-    return Future.value(
-        (_data['data'] as List)?.map((e) => ProductItem.fromJson(e))?.toList());
-  }
-
-  @override
   Future<ProductItem> getProductInfo(int id) {
     // TODO: implement getProductInfo
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<ProductItemPaged> getFeaturedProducts(int page, {perPage}) {
+    // TODO: implement getFeaturedProducts
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<ProductItemPaged> getTopSellingProducts(int page, {perPage}) {
+    // TODO: implement getTopSellingProducts
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<ProductItemPaged> getTrendingProducts(int page, {perPage}) {
+    // TODO: implement getTrendingProducts
     throw UnimplementedError();
   }
 }

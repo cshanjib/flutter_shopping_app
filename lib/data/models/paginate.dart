@@ -13,8 +13,17 @@ abstract class Paginate<T> {
 
   final int page;
 
+  @JsonKey(name: 'data_count')
+  final int dataCount;
+
   @JsonKey(name: 'total_pages')
   final int totalPages;
 
-  Paginate({this.data, this.hasNext, this.hasPrev, this.page, this.totalPages});
+  Paginate(
+      {this.data,
+      this.hasNext,
+      this.hasPrev,
+      this.page,
+      this.totalPages,
+      this.dataCount});
 }

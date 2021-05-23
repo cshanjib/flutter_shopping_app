@@ -17,14 +17,22 @@ class ProductItemCubit extends Cubit<ProductItemState> {
       : _productRepository = repository,
         super(ProductItemState.initial());
 
-  void loadProducts({ITEM_TYPE type}) async {
+  void loadProducts({ITEM_TYPE type, appendData: true}) async {
     try {
       emit(state.update(loading: true));
+      final int _page = state.pagedItem.page + 1;
+      ProductItemPaged productsPaged =
+          await _productRepository.getProductList(_page, type: type);
 
-      List<ProductItem> products =
-          await _productRepository.getProductList(type: type);
+      //appendData is for appending previous data->lazy loading cases
+      //for paged display appendData is false -> paged display
+      final ProductItemPaged _updatedPagedData = appendData ? productsPaged
+          .update(data: [...state.pagedItem.data, ...productsPaged.data]) : productsPaged;
 
-      emit(state.update(loading: false, items: products, init: true));
+      emit(state.update(
+          loading: false,
+          pagedItem: _updatedPagedData,
+          init: true));
     } catch (e) {
       final errorMsg = e.toString();
       emit(state.update(loading: false, error: errorMsg));
