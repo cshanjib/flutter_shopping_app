@@ -1,4 +1,6 @@
+import 'package:beamer/beamer.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_shopping_app/constant/enum.dart';
@@ -23,7 +25,7 @@ class ItemList extends StatelessWidget {
         TopTitle(
           _respHelper,
           title: title ?? "Items",
-          onPressed: _seeAll,
+          onPressed: () => _seeAll(context),
         ),
         BlocProvider<ProductItemCubit>(
             create: (context) => GetIt.instance.get<ProductItemCubit>()
@@ -33,7 +35,9 @@ class ItemList extends StatelessWidget {
     );
   }
 
-  _seeAll() {}
+  _seeAll(BuildContext context) {
+    context.beamToNamed('/${describeEnum(type)}');
+  }
 }
 
 class _ItemList extends StatefulWidget {
@@ -56,6 +60,12 @@ class _ItemListState extends State<_ItemList> {
     super.initState();
     _controller = ScrollController()..addListener(_scrollListener);
     _bloc = context.read<ProductItemCubit>();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 
   _scrollListener() {

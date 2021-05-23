@@ -7,6 +7,7 @@ import 'package:flutter_shopping_app/constant/color.dart';
 import 'package:flutter_shopping_app/injectable/config.dart';
 import 'package:flutter_shopping_app/ui/cart/cart.dart';
 import 'package:flutter_shopping_app/ui/common/item/detail/item_detail.dart';
+import 'package:flutter_shopping_app/ui/common/item/list/item_list_page.dart';
 import 'package:flutter_shopping_app/ui/dashboard/dashboard.dart';
 import 'package:flutter_shopping_app/util/pref_util.dart';
 import 'package:get_it/get_it.dart';
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
         beamLocations: [
           DashboardLocation(),
           ItemDetailLocation(),
-          UserCartLocation()
+          UserCartLocation(),
+          ItemListLocation()
         ],
       ));
 

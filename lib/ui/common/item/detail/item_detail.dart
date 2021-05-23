@@ -25,12 +25,13 @@ class ItemDetailLocation extends BeamLocation {
   @override
   List<BeamPage> buildPages(BuildContext context, BeamState state) {
     final data = state.data['item'];
+    final _itemId = int.tryParse(state.pathParameters['itemId']);
     return [
       BeamPage(
-        key: ValueKey('item-${int.tryParse(state.pathParameters['itemId'])}'),
+        key: ValueKey('item-$_itemId'),
         title: 'Items',
         child: ItemDetailPage(data,
-            id: int.tryParse(state.pathParameters['itemId'])),
+            id: _itemId),
       )
     ];
   }

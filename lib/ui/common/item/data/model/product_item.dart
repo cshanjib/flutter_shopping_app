@@ -42,6 +42,7 @@ class ProductItemPaged extends Paginate<ProductItem> {
     page,
     hasPrev,
     totalPages,
+    dataCount
   }) {
     return ProductItemPaged(
       data: data ?? this.data,
@@ -49,6 +50,7 @@ class ProductItemPaged extends Paginate<ProductItem> {
       page: page ?? this.page,
       totalPages: totalPages ?? this.totalPages,
       hasPrev: hasPrev ?? this.hasPrev,
+      dataCount: dataCount ?? this.dataCount,
     );
   }
 
