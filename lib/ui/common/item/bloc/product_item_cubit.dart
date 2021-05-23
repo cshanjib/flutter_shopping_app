@@ -26,13 +26,13 @@ class ProductItemCubit extends Cubit<ProductItemState> {
 
       //appendData is for appending previous data->lazy loading cases
       //for paged display appendData is false -> paged display
-      final ProductItemPaged _updatedPagedData = appendData ? productsPaged
-          .update(data: [...state.pagedItem.data, ...productsPaged.data]) : productsPaged;
+      final ProductItemPaged _updatedPagedData = appendData
+          ? productsPaged
+              .update(data: [...state.pagedItem.data, ...productsPaged.data])
+          : productsPaged;
 
       emit(state.update(
-          loading: false,
-          pagedItem: _updatedPagedData,
-          init: true));
+          loading: false, pagedItem: _updatedPagedData, init: true));
     } catch (e) {
       final errorMsg = e.toString();
       emit(state.update(loading: false, error: errorMsg));
