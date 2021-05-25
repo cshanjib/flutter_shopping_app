@@ -11,17 +11,18 @@ class ProductItemPaged extends Paginate<ProductItem> {
       {List<ProductItem> data,
       bool hasNext,
       bool hasPrev,
+      int perPage,
       int page,
       int dataCount,
       int totalPages})
       : super(
-          data: data,
-          hasPrev: hasPrev,
-          hasNext: hasNext,
-          totalPages: totalPages,
-          dataCount: dataCount,
-          page: page,
-        );
+            data: data,
+            hasPrev: hasPrev,
+            hasNext: hasNext,
+            totalPages: totalPages,
+            dataCount: dataCount,
+            page: page,
+            perPage: perPage);
 
   factory ProductItemPaged.fromJson(Map<String, dynamic> json) =>
       _$ProductItemPagedFromJson(json);
@@ -36,20 +37,21 @@ class ProductItemPaged extends Paginate<ProductItem> {
 
   Map<String, dynamic> toJson() => _$ProductItemPagedToJson(this);
 
-  ProductItemPaged update({
-    List<ProductItem> data,
-    hasNext,
-    page,
-    hasPrev,
-    totalPages,
-    dataCount
-  }) {
+  ProductItemPaged update(
+      {List<ProductItem> data,
+      hasNext,
+      page,
+      hasPrev,
+      totalPages,
+      dataCount,
+      perPage}) {
     return ProductItemPaged(
       data: data ?? this.data,
       hasNext: hasNext ?? this.hasNext,
       page: page ?? this.page,
       totalPages: totalPages ?? this.totalPages,
       hasPrev: hasPrev ?? this.hasPrev,
+      perPage: perPage ?? this.perPage,
       dataCount: dataCount ?? this.dataCount,
     );
   }
@@ -63,6 +65,7 @@ class ProductItemPaged extends Paginate<ProductItem> {
       totalPages: $totalPages,
       dataCount: $dataCount,
       hasPrev: $hasPrev,
+      perPage: $perPage,
     }''';
   }
 }

@@ -39,6 +39,7 @@ class MockProductItemProvider implements ProductItemProvider {
             ?.toList(),
         hasNext: page < _totalSize,
         hasPrev: page > 1,
+        perPage: _perPage,
         dataCount: _filtered.length,
         totalPages: _totalSize));
   }
@@ -62,6 +63,7 @@ class MockProductItemProvider implements ProductItemProvider {
             ?.toList(),
         hasNext: page < _totalSize,
         hasPrev: page > 1,
+        perPage: _perPage,
         dataCount: _filtered.length,
         totalPages: _totalSize));
   }
@@ -85,6 +87,7 @@ class MockProductItemProvider implements ProductItemProvider {
             ?.toList(),
         hasNext: page < _totalSize,
         hasPrev: page > 1,
+        perPage: _perPage,
         dataCount: _filtered.length,
         totalPages: _totalSize));
   }

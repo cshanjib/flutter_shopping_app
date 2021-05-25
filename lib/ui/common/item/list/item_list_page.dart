@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_shopping_app/constant/enum.dart';
 import 'package:flutter_shopping_app/helper/responsive_helper.dart';
 import 'package:flutter_shopping_app/ui/common/base/app_wrapper.dart';
+import 'package:flutter_shopping_app/ui/common/custom_paginator.dart';
 import 'package:flutter_shopping_app/ui/common/item/bloc/product_item_cubit.dart';
 import 'package:flutter_shopping_app/ui/common/item/item_card.dart';
 import 'package:flutter_shopping_app/ui/common/item/item_loader.dart';
@@ -117,44 +118,59 @@ class _ItemListPageState extends State<_ItemListPage> {
     final ResponsiveHelper _respHelper = ResponsiveHelper(context: context);
     return BlocBuilder<ProductItemCubit, ProductItemState>(
         builder: (context, state) {
-      if (state.hasNoData)
+      if (!state.loading && state.hasNoData)
         return EmptyCard(
           responsiveHelper: _respHelper,
         );
-      return GridView.builder(
-          padding: EdgeInsets.all(_respHelper.defaultGap),
-          controller: _controller,
-          itemCount: state.hasError
-              ? state.size + 1
-              : !state.init
-                  ? _getOptimalCrossAxisCount(context, _respHelper)
-                  : state.loading
-                      ? state.size + 2
-                      : state.size,
-          itemBuilder: (BuildContext context, int index) {
-            if (index >= state.size)
-              return ItemLoaderCard(
-                errorMsg: state.error,
-                retry: () => _retry(context),
-                responsiveHelper: _respHelper,
-              );
-            else
-              return ItemCard(
-                item: state.items[index],
-                responsiveHelper: _respHelper,
-              );
-          },
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            childAspectRatio: _respHelper.isDesktop
-                ? 1.1
-                : _respHelper.isTablet()
-                    ? 1
-                    : 1.4,
-            crossAxisCount: _getOptimalCrossAxisCount(context, _respHelper),
-            mainAxisSpacing: _respHelper.defaultSmallGap,
-            crossAxisSpacing: 0,
-          ));
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Expanded(
+            child: GridView.builder(
+                padding: EdgeInsets.all(_respHelper.defaultGap),
+                // controller: _controller,
+                itemCount: state.hasError
+                    ? state.size + 1
+                    : state.loading
+                        ? state.pagedItem.perPage
+                        : state.size,
+                itemBuilder: (BuildContext context, int index) {
+                  if (index >= state.size)
+                    return ItemLoaderCard(
+                      errorMsg: state.error,
+                      retry: () => _retry(context),
+                      responsiveHelper: _respHelper,
+                    );
+                  else
+                    return ItemCard(
+                      item: state.items[index],
+                      responsiveHelper: _respHelper,
+                    );
+                },
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  childAspectRatio: _respHelper.isDesktop
+                      ? 1.1
+                      : _respHelper.isTablet()
+                          ? 1
+                          : 1.2,
+                  crossAxisCount:
+                      _getOptimalCrossAxisCount(context, _respHelper),
+                  mainAxisSpacing: _respHelper.defaultSmallGap,
+                  crossAxisSpacing: 0,
+                )),
+          ),
+          CustomPaginator(
+            state.pagedItem,
+            onPageChanged: _onPageChanged,
+            disabled: state.loading,
+          ),
+        ],
+      );
     });
+  }
+
+  _onPageChanged(int page) {
+    _loadProducts(page: page);
   }
 
   int _getOptimalCrossAxisCount(
@@ -166,8 +182,8 @@ class _ItemListPageState extends State<_ItemListPage> {
             : 2;
   }
 
-  _loadProducts() {
-    _bloc.loadProducts(type: widget.type);
+  _loadProducts({page}) {
+    _bloc.loadProducts(type: widget.type, page: page, appendData: false);
   }
 
   _retry(BuildContext context) {
