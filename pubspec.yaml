@@ -23,16 +23,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  json_annotation: ^3.1.1
-  carousel_slider: ^3.0.0
-  injectable: ^1.0.7
-  get_it: ^5.0.6
-  equatable: ^1.2.6
-  flutter_bloc: ^6.1.2
-  flutter_rating_bar: ^4.0.0
-  shared_preferences: ^2.0.5
-  bot_toast: ^4.0.1
-
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -42,9 +32,6 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  injectable_generator: ^1.0.6
-  build_runner: ^1.10.6
-  json_serializable: ^3.5.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
