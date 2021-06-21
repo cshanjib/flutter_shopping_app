@@ -28,7 +28,7 @@ class CategoryList extends StatelessWidget {
 }
 
 class CategoryItemCard extends StatelessWidget {
-  @override
+  
   final String imageUrl;
   final String title;
   final int themeColor;
