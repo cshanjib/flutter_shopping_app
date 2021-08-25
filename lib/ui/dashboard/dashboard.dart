@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_shopping_app/constant/color.dart';
+import 'package:flutter_shopping_app/constant/enum.dart';
+import 'package:flutter_shopping_app/ui/bored/bloc/bored_cubit.dart';
 import 'package:flutter_shopping_app/ui/carousel/custom_carousel.dart';
 import 'package:flutter_shopping_app/ui/category/category_list.dart';
 import 'package:flutter_shopping_app/ui/common/base/custom_text_field.dart';
@@ -22,9 +25,9 @@ class Dashboard extends StatelessWidget {
         ),
         CategoryList(),
         CustomCarousel(),
-        ItemList(items: MockUtil.getTrendingItems(), title: "Trending",),
-        ItemList(items: MockUtil.getFeaturedItems(), title: "Feature",),
-        ItemList(items: MockUtil.getTopSellingItems(), title: "Top Selling",),
+        ItemList(type: ITEM_TYPE.trending),
+        ItemList(type: ITEM_TYPE.featured),
+        ItemList(type: ITEM_TYPE.topSelling),
       ],
     );
   }

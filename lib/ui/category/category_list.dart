@@ -28,7 +28,6 @@ class CategoryList extends StatelessWidget {
 }
 
 class CategoryItemCard extends StatelessWidget {
-  
   final String imageUrl;
   final String title;
   final int themeColor;
@@ -47,7 +46,9 @@ class CategoryItemCard extends StatelessWidget {
       child: Column(
         children: [
           Expanded(child: Image.network(imageUrl)),
-          SizedBox(height: 6,),
+          SizedBox(
+            height: 6,
+          ),
           Text(
             title,
             style: TextStyle(fontSize: 12),
