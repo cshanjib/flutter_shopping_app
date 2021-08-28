@@ -16,7 +16,7 @@ main() async{
 
 _testUrl(Uri uri) async {
   print("Testing Http");
-  BoaredApiProvider _apiProvider = BoaredApiProvider();
+  BoaredApiProvider _apiProvider = BoaredRealApiProvider();
 
   print(await _apiProvider.getBoredEntry());
 }
