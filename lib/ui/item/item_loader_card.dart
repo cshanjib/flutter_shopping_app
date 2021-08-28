@@ -5,11 +5,10 @@ import 'package:flutter_shopping_app/ui/common/base/custom_button.dart';
 class ItemLoaderCard extends StatelessWidget {
   final String errMsg;
   final VoidCallback retry;
-  final double topMargin;
 
   bool get _hasError => errMsg != null && errMsg.isNotEmpty;
 
-  const ItemLoaderCard({Key key, this.errMsg, this.retry, this.topMargin})
+  const ItemLoaderCard({Key key, this.errMsg, this.retry})
       : super(key: key);
 
   @override

@@ -5,11 +5,10 @@ import 'package:flutter_shopping_app/ui/common/base/custom_button.dart';
 class CategoryLoaderCard extends StatelessWidget {
   final String errMsg;
   final VoidCallback retry;
-  final double topMargin;
 
   bool get _hasError => errMsg != null && errMsg.isNotEmpty;
 
-  const CategoryLoaderCard({Key key, this.errMsg, this.retry, this.topMargin})
+  const CategoryLoaderCard({Key key, this.errMsg, this.retry})
       : super(key: key);
 
   @override
@@ -19,7 +18,8 @@ class CategoryLoaderCard extends StatelessWidget {
       padding: const EdgeInsets.all(6),
       margin: EdgeInsets.symmetric(horizontal: 10),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10), color: ThemeTextColorLightest),
+          borderRadius: BorderRadius.circular(10),
+          color: ThemeTextColorLightest),
       child: _hasError ? _errorContainer() : _loaderContainer(),
     );
   }

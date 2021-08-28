@@ -6,7 +6,6 @@ class CarouselLoaderCard extends StatelessWidget {
   final String errMsg;
   final String emptyMsg;
   final VoidCallback retry;
-  final double topMargin;
   final bool isEmpty;
 
   bool get _hasError => errMsg != null && errMsg.isNotEmpty;
@@ -15,7 +14,6 @@ class CarouselLoaderCard extends StatelessWidget {
       {Key key,
       this.errMsg,
       this.retry,
-      this.topMargin,
       this.emptyMsg: "No data",
       this.isEmpty})
       : super(key: key);
