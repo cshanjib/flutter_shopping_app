@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_shopping_app/ui/category/bloc/product_category_cubit.dart';
 import 'package:flutter_shopping_app/ui/category/category_loader_card.dart';
-import 'package:flutter_shopping_app/ui/category/categoryi_item_card.dart';
+import 'package:flutter_shopping_app/ui/category/category_item_card.dart';
 import 'package:get_it/get_it.dart';
 
 class CategoryList extends StatelessWidget {
