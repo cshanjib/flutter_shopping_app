@@ -6,6 +6,9 @@ import 'package:flutter_shopping_app/constant/color.dart';
 import 'package:flutter_shopping_app/ui/common/base/custom_button.dart';
 import 'package:flutter_shopping_app/ui/common/incrementer.dart';
 import 'package:flutter_shopping_app/ui/item/data/model/product_item.dart';
+import 'package:flutter_shopping_app/util/dialog_util.dart';
+import 'package:flutter_shopping_app/util/message_util.dart';
+import 'package:flutter_shopping_app/util/pref_util.dart';
 
 class ItemDetail extends StatefulWidget {
   final ProductItem item;
@@ -124,11 +127,20 @@ class _ItemDetailState extends State<ItemDetail> {
           CustomButton(
             label: "Add to cart",
             padding: EdgeInsets.symmetric(vertical: 15, horizontal: 60),
-            onPressed: () {},
+            onPressed: _addToCart,
           )
         ],
       ),
     );
+  }
+
+  _addToCart() {
+    if (PrefUtil.isUserLoggedIn()) {
+      //call the api to add the items to the cart
+      MessageUtil.showSuccessMessage("Added to the cart successfully");
+    } else {
+      DialogUtil.openLoginPopup(context);
+    }
   }
 
   _updateCartCount(count) {

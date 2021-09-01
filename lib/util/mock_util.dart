@@ -1,5 +1,4 @@
 abstract class MockUtil {
-  
   static Map getAllProducts() {
     return {
       "data": [
@@ -999,7 +998,7 @@ abstract class MockUtil {
     return [
       "https://www.kenresearch.com/uploads/posts/images/Herbal%20Products%20Market.jpg",
       "https://images.unsplash.com/photo-1506617564039-2f3b650b7010?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Z3JvY2VyeXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80",
-      "https://apnafamilystore.com/shop-online-banner.jpg",
+      "https://image.freepik.com/free-vector/online-food-delivery-grocery-order-service-banner_107791-2153.jpg",
     ];
   }
 
@@ -1039,6 +1038,35 @@ abstract class MockUtil {
             "https://i.pinimg.com/originals/fa/07/04/fa0704ba240c7b884b9b7ee94157fb7d.png",
         "theme": 0xFFF9E3FD
       }
+    ];
+  }
+
+  static List<Map<String, dynamic>> getUsers() {
+    return [
+      {
+        "username": "user1",
+        "password": "password1",
+        "id": 1,
+        "email": "user1@gmail.com"
+      },
+      {
+        "username": "user2",
+        "password": "password2",
+        "id": 1,
+        "email": "user2@gmail.com"
+      },
+      {
+        "username": "user3",
+        "password": "password3",
+        "id": 1,
+        "email": "user3@gmail.com"
+      },
+      {
+        "username": "user4",
+        "password": "password4",
+        "id": 1,
+        "email": "user4@gmail.com"
+      },
     ];
   }
 }
