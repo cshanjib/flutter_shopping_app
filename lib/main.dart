@@ -14,9 +14,6 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await PrefUtil.loadUserAuthData();
   configureDependencies();
-  SystemChrome.setEnabledSystemUIOverlays([
-     SystemUiOverlay.bottom, //This line is used for showing the bottom bar
-  ]);
   runApp(MyApp());
 }
 
