@@ -27,6 +27,7 @@ class CustomDrawer extends StatelessWidget {
       context.read<AuthTokenCubit>().clear();
     } else {
       DialogUtil.openLoginPopup(context);
+      // DialogUtil.requestLoginPage(context);
     }
   }
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_shopping_app/ui/auth/login/login.dart';
+import 'package:flutter_shopping_app/ui/auth/login/login_page.dart';
 
 abstract class DialogUtil {
   static Future openLoginPopup(BuildContext context,
@@ -16,5 +17,10 @@ abstract class DialogUtil {
                 child: LoginForm(),
               ),
             ));
+  }
+
+  static void requestLoginPage(BuildContext context) {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => LoginPage()));
   }
 }
