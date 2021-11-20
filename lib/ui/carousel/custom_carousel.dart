@@ -38,6 +38,7 @@ class CustomCarousel extends StatelessWidget {
                 autoPlay:
                     (!state.hasError && !state.loading && !state.hasNoData),
                 enlargeStrategy: CenterPageEnlargeStrategy.scale,
+                autoPlayInterval: Duration(seconds: 20),
                 aspectRatio: 3,
                 viewportFraction: 1));
       }),

@@ -12,9 +12,9 @@ class UserInfoCard extends StatelessWidget {
         builder: (context, state) {
       return state.isLoggedIn
           ? Padding(
-            padding: const EdgeInsets.fromLTRB(20, 10, 10, 0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              padding: const EdgeInsets.fromLTRB(20, 10, 10, 0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     "Hello ${state.auth.username}",
@@ -35,7 +35,7 @@ class UserInfoCard extends StatelessWidget {
                   )
                 ],
               ),
-          )
+            )
           : SizedBox.shrink();
     });
   }
