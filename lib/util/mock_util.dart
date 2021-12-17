@@ -5,7 +5,7 @@ abstract class MockUtil {
         {
           "name": "Cabbages",
           "imageUrl":
-              "https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/1502591/cabbage-clipart-md.png",
+              "https://www.hexcoders.com/images/items/cabbage.png",
           "currency": 9.9,
           "currencyType": "\$",
           "sellingUnit": "per piece",
@@ -29,7 +29,7 @@ abstract class MockUtil {
         },
         {
           "name": "Tomatoes",
-          "imageUrl": "https://pngimg.com/uploads/tomato/tomato_PNG12594.png",
+          "imageUrl": "https://www.hexcoders.com/images/items/tomatoes.png",
           "currency": 7.9,
           "currencyType": "\$",
           "sellingUnit": "per kg",
@@ -45,7 +45,7 @@ abstract class MockUtil {
         {
           "name": "Potatoes",
           "imageUrl":
-              "https://www.freeiconspng.com/uploads/slice-of-potato-png-5.png",
+              "https://www.hexcoders.com/images/items/potato.png",
           "currency": 9.9,
           "currencyType": "\$",
           "sellingUnit": "per kg",
@@ -61,7 +61,7 @@ abstract class MockUtil {
         {
           "name": "Strawberries",
           "imageUrl":
-              "https://www.freeiconspng.com/uploads/strawberry-png-9.png",
+              "https://www.hexcoders.com/images/items/strawberry.png",
           "currency": 9.9,
           "currencyType": "\$",
           "sellingUnit": "per kg",
@@ -77,7 +77,7 @@ abstract class MockUtil {
         {
           "name": "Peas",
           "imageUrl":
-              "https://www.pngkey.com/png/full/46-466450_sweet-peas-vegetables-png.png",
+              "https://www.hexcoders.com/images/items/pea.png",
           "currency": 17.9,
           "currencyType": "\$",
           "sellingUnit": "per kg",
@@ -93,7 +93,7 @@ abstract class MockUtil {
         {
           "name": "Chips",
           "imageUrl":
-              "https://www.pngkey.com/png/full/110-1101283_chips-bag-png-clipart-freeuse-library-lays-salt.png",
+              "https://www.hexcoders.com/images/items/lays.png",
           "currency": 7.9,
           "currencyType": "\$",
           "sellingUnit": "per kg",
@@ -108,7 +108,7 @@ abstract class MockUtil {
         },
         {
           "name": "Corn",
-          "imageUrl": "https://freepngimg.com/thumb/categories/951.png",
+          "imageUrl": "https://www.hexcoders.com/images/items/corn.png",
           "currency": 49.9,
           "currencyType": "\$",
           "sellingUnit": "per kg",
@@ -124,7 +124,7 @@ abstract class MockUtil {
         {
           "name": "Spinach",
           "imageUrl":
-              "https://dehatisabji.com/wp-content/uploads/2020/11/Spinach-All-Green-600x469-1.jpg",
+              "https://www.hexcoders.com/images/items/spinach.png",
           "currency": 7,
           "currencyType": "\$",
           "sellingUnit": "per piece",
@@ -148,7 +148,7 @@ abstract class MockUtil {
         {
           "name": "Carrots",
           "imageUrl":
-              "https://www.transparentpng.com/thumb/carrot/71HwEm-fresh-carrot-photos.png",
+              "https://www.hexcoders.com/images/items/carrot.png",
           "currency": 19.9,
           "currencyType": "\$",
           "sellingUnit": "per kg",
@@ -164,7 +164,7 @@ abstract class MockUtil {
         {
           "name": "Banana",
           "imageUrl":
-              "https://www.pngkey.com/png/full/1009-10099133_banana-png-free-commercial-use-image-.png",
+              "https://www.hexcoders.com/images/items/banana.png",
           "currency": 7.9,
           "currencyType": "\$",
           "sellingUnit": "per kg",
@@ -180,7 +180,7 @@ abstract class MockUtil {
         {
           "name": "Beef",
           "imageUrl":
-              "https://www.pngkey.com/png/full/36-368340_beef-transparent-background.png",
+              "https://www.hexcoders.com/images/items/beef.png",
           "currency": 49.9,
           "currencyType": "\$",
           "sellingUnit": "per kg",
@@ -196,7 +196,7 @@ abstract class MockUtil {
         {
           "name": "Pineapple",
           "imageUrl":
-              "https://www.pngkey.com/png/full/6-67795_free-png-pineapple-png-images-transparent-pineapple-png.png",
+              "https://www.hexcoders.com/images/items/pine-apple.png",
           "currency": 7,
           "currencyType": "\$",
           "sellingUnit": "per piece",
@@ -212,7 +212,7 @@ abstract class MockUtil {
         {
           "name": "Lemons",
           "imageUrl":
-              "https://static.wixstatic.com/media/2cd43b_70a434cd69564ca0ae07358d23b5bcdb~mv2.png/v1/fill/w_320,h_312,q_90/2cd43b_70a434cd69564ca0ae07358d23b5bcdb~mv2.png",
+              "https://www.hexcoders.com/images/items/lemons.png",
           "currency": 7,
           "currencyType": "\$",
           "sellingUnit": "per piece",
@@ -236,7 +236,7 @@ abstract class MockUtil {
         {
           "name": "Honey",
           "imageUrl":
-              "https://freepngimg.com//thumb/honey/37317-3-honey-transparent-image-thumb.png",
+              "https://www.hexcoders.com/images/items/honey.png",
           "currency": 7,
           "currencyType": "\$",
           "sellingUnit": "per piece",
@@ -252,7 +252,7 @@ abstract class MockUtil {
         {
           "name": "Cabbages",
           "imageUrl":
-              "https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/1502591/cabbage-clipart-md.png",
+              "https://www.hexcoders.com/images/items/cabbage.png",
           "currency": 9.9,
           "currencyType": "\$",
           "sellingUnit": "per piece",
@@ -276,7 +276,7 @@ abstract class MockUtil {
         },
         {
           "name": "Tomatoes",
-          "imageUrl": "https://pngimg.com/uploads/tomato/tomato_PNG12594.png",
+          "imageUrl": "https://www.hexcoders.com/images/items/tomatoes.png",
           "currency": 7.9,
           "currencyType": "\$",
           "sellingUnit": "per kg",
@@ -292,7 +292,7 @@ abstract class MockUtil {
         {
           "name": "Potatoes",
           "imageUrl":
-              "https://www.freeiconspng.com/uploads/slice-of-potato-png-5.png",
+              "https://www.hexcoders.com/images/items/potato.png",
           "currency": 9.9,
           "currencyType": "\$",
           "sellingUnit": "per kg",
@@ -308,7 +308,7 @@ abstract class MockUtil {
         {
           "name": "Strawberries",
           "imageUrl":
-              "https://www.freeiconspng.com/uploads/strawberry-png-9.png",
+              "https://www.hexcoders.com/images/items/strawberry.png",
           "currency": 9.9,
           "currencyType": "\$",
           "sellingUnit": "per kg",
@@ -324,7 +324,7 @@ abstract class MockUtil {
         {
           "name": "Peas",
           "imageUrl":
-              "https://www.pngkey.com/png/full/46-466450_sweet-peas-vegetables-png.png",
+              "https://www.hexcoders.com/images/items/pea.png",
           "currency": 17.9,
           "currencyType": "\$",
           "sellingUnit": "per kg",
@@ -340,7 +340,7 @@ abstract class MockUtil {
         {
           "name": "Chips",
           "imageUrl":
-              "https://www.pngkey.com/png/full/110-1101283_chips-bag-png-clipart-freeuse-library-lays-salt.png",
+              "https://www.hexcoders.com/images/items/lays.png",
           "currency": 7.9,
           "currencyType": "\$",
           "sellingUnit": "per kg",
@@ -355,7 +355,7 @@ abstract class MockUtil {
         },
         {
           "name": "Corn",
-          "imageUrl": "https://freepngimg.com/thumb/categories/951.png",
+          "imageUrl": "https://www.hexcoders.com/images/items/corn.png",
           "currency": 49.9,
           "currencyType": "\$",
           "sellingUnit": "per kg",
@@ -371,7 +371,7 @@ abstract class MockUtil {
         {
           "name": "Spinach",
           "imageUrl":
-              "https://dehatisabji.com/wp-content/uploads/2020/11/Spinach-All-Green-600x469-1.jpg",
+              "https://www.hexcoders.com/images/items/spinach.png",
           "currency": 7,
           "currencyType": "\$",
           "sellingUnit": "per piece",
@@ -395,7 +395,7 @@ abstract class MockUtil {
         {
           "name": "Carrots",
           "imageUrl":
-              "https://www.transparentpng.com/thumb/carrot/71HwEm-fresh-carrot-photos.png",
+              "https://www.hexcoders.com/images/items/carrot.png",
           "currency": 19.9,
           "currencyType": "\$",
           "sellingUnit": "per kg",
@@ -411,7 +411,7 @@ abstract class MockUtil {
         {
           "name": "Banana",
           "imageUrl":
-              "https://www.pngkey.com/png/full/1009-10099133_banana-png-free-commercial-use-image-.png",
+              "https://www.hexcoders.com/images/items/banana.png",
           "currency": 7.9,
           "currencyType": "\$",
           "sellingUnit": "per kg",
@@ -427,7 +427,7 @@ abstract class MockUtil {
         {
           "name": "Beef",
           "imageUrl":
-              "https://www.pngkey.com/png/full/36-368340_beef-transparent-background.png",
+              "https://www.hexcoders.com/images/items/beef.png",
           "currency": 49.9,
           "currencyType": "\$",
           "sellingUnit": "per kg",
@@ -443,7 +443,7 @@ abstract class MockUtil {
         {
           "name": "Pineapple",
           "imageUrl":
-              "https://www.pngkey.com/png/full/6-67795_free-png-pineapple-png-images-transparent-pineapple-png.png",
+              "https://www.hexcoders.com/images/items/pine-apple.png",
           "currency": 7,
           "currencyType": "\$",
           "sellingUnit": "per piece",
@@ -459,7 +459,7 @@ abstract class MockUtil {
         {
           "name": "Lemons",
           "imageUrl":
-              "https://static.wixstatic.com/media/2cd43b_70a434cd69564ca0ae07358d23b5bcdb~mv2.png/v1/fill/w_320,h_312,q_90/2cd43b_70a434cd69564ca0ae07358d23b5bcdb~mv2.png",
+              "https://www.hexcoders.com/images/items/lemons.png",
           "currency": 7,
           "currencyType": "\$",
           "sellingUnit": "per piece",
@@ -483,7 +483,7 @@ abstract class MockUtil {
         {
           "name": "Honey",
           "imageUrl":
-              "https://freepngimg.com//thumb/honey/37317-3-honey-transparent-image-thumb.png",
+              "https://www.hexcoders.com/images/items/honey.png",
           "currency": 7,
           "currencyType": "\$",
           "sellingUnit": "per piece",
@@ -499,7 +499,7 @@ abstract class MockUtil {
         {
           "name": "Cabbages",
           "imageUrl":
-              "https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/1502591/cabbage-clipart-md.png",
+              "https://www.hexcoders.com/images/items/cabbage.png",
           "currency": 9.9,
           "currencyType": "\$",
           "sellingUnit": "per piece",
@@ -523,7 +523,7 @@ abstract class MockUtil {
         },
         {
           "name": "Tomatoes",
-          "imageUrl": "https://pngimg.com/uploads/tomato/tomato_PNG12594.png",
+          "imageUrl": "https://www.hexcoders.com/images/items/tomatoes.png",
           "currency": 7.9,
           "currencyType": "\$",
           "sellingUnit": "per kg",
@@ -539,7 +539,7 @@ abstract class MockUtil {
         {
           "name": "Potatoes",
           "imageUrl":
-              "https://www.freeiconspng.com/uploads/slice-of-potato-png-5.png",
+              "https://www.hexcoders.com/images/items/potato.png",
           "currency": 9.9,
           "currencyType": "\$",
           "sellingUnit": "per kg",
@@ -555,7 +555,7 @@ abstract class MockUtil {
         {
           "name": "Strawberries",
           "imageUrl":
-              "https://www.freeiconspng.com/uploads/strawberry-png-9.png",
+              "https://www.hexcoders.com/images/items/strawberry.png",
           "currency": 9.9,
           "currencyType": "\$",
           "sellingUnit": "per kg",
@@ -571,7 +571,7 @@ abstract class MockUtil {
         {
           "name": "Peas",
           "imageUrl":
-              "https://www.pngkey.com/png/full/46-466450_sweet-peas-vegetables-png.png",
+              "https://www.hexcoders.com/images/items/pea.png",
           "currency": 17.9,
           "currencyType": "\$",
           "sellingUnit": "per kg",
@@ -587,7 +587,7 @@ abstract class MockUtil {
         {
           "name": "Chips",
           "imageUrl":
-              "https://www.pngkey.com/png/full/110-1101283_chips-bag-png-clipart-freeuse-library-lays-salt.png",
+              "https://www.hexcoders.com/images/items/lays.png",
           "currency": 7.9,
           "currencyType": "\$",
           "sellingUnit": "per kg",
@@ -602,7 +602,7 @@ abstract class MockUtil {
         },
         {
           "name": "Corn",
-          "imageUrl": "https://freepngimg.com/thumb/categories/951.png",
+          "imageUrl": "https://www.hexcoders.com/images/items/corn.png",
           "currency": 49.9,
           "currencyType": "\$",
           "sellingUnit": "per kg",
@@ -618,7 +618,7 @@ abstract class MockUtil {
         {
           "name": "Spinach",
           "imageUrl":
-              "https://dehatisabji.com/wp-content/uploads/2020/11/Spinach-All-Green-600x469-1.jpg",
+              "https://www.hexcoders.com/images/items/spinach.png",
           "currency": 7,
           "currencyType": "\$",
           "sellingUnit": "per piece",
@@ -642,7 +642,7 @@ abstract class MockUtil {
         {
           "name": "Carrots",
           "imageUrl":
-              "https://www.transparentpng.com/thumb/carrot/71HwEm-fresh-carrot-photos.png",
+              "https://www.hexcoders.com/images/items/carrot.png",
           "currency": 19.9,
           "currencyType": "\$",
           "sellingUnit": "per kg",
@@ -658,7 +658,7 @@ abstract class MockUtil {
         {
           "name": "Banana",
           "imageUrl":
-              "https://www.pngkey.com/png/full/1009-10099133_banana-png-free-commercial-use-image-.png",
+              "https://www.hexcoders.com/images/items/banana.png",
           "currency": 7.9,
           "currencyType": "\$",
           "sellingUnit": "per kg",
@@ -674,7 +674,7 @@ abstract class MockUtil {
         {
           "name": "Beef",
           "imageUrl":
-              "https://www.pngkey.com/png/full/36-368340_beef-transparent-background.png",
+              "https://www.hexcoders.com/images/items/beef.png",
           "currency": 49.9,
           "currencyType": "\$",
           "sellingUnit": "per kg",
@@ -690,7 +690,7 @@ abstract class MockUtil {
         {
           "name": "Pineapple",
           "imageUrl":
-              "https://www.pngkey.com/png/full/6-67795_free-png-pineapple-png-images-transparent-pineapple-png.png",
+              "https://www.hexcoders.com/images/items/pine-apple.png",
           "currency": 7,
           "currencyType": "\$",
           "sellingUnit": "per piece",
@@ -706,7 +706,7 @@ abstract class MockUtil {
         {
           "name": "Lemons",
           "imageUrl":
-              "https://static.wixstatic.com/media/2cd43b_70a434cd69564ca0ae07358d23b5bcdb~mv2.png/v1/fill/w_320,h_312,q_90/2cd43b_70a434cd69564ca0ae07358d23b5bcdb~mv2.png",
+              "https://www.hexcoders.com/images/items/lemons.png",
           "currency": 7,
           "currencyType": "\$",
           "sellingUnit": "per piece",
@@ -730,7 +730,7 @@ abstract class MockUtil {
         {
           "name": "Honey",
           "imageUrl":
-              "https://freepngimg.com//thumb/honey/37317-3-honey-transparent-image-thumb.png",
+              "https://www.hexcoders.com/images/items/honey.png",
           "currency": 7,
           "currencyType": "\$",
           "sellingUnit": "per piece",
@@ -746,7 +746,7 @@ abstract class MockUtil {
         {
           "name": "Cabbages",
           "imageUrl":
-              "https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/1502591/cabbage-clipart-md.png",
+              "https://www.hexcoders.com/images/items/cabbage.png",
           "currency": 9.9,
           "currencyType": "\$",
           "sellingUnit": "per piece",
@@ -770,7 +770,7 @@ abstract class MockUtil {
         },
         {
           "name": "Tomatoes",
-          "imageUrl": "https://pngimg.com/uploads/tomato/tomato_PNG12594.png",
+          "imageUrl": "https://www.hexcoders.com/images/items/tomatoes.png",
           "currency": 7.9,
           "currencyType": "\$",
           "sellingUnit": "per kg",
@@ -786,7 +786,7 @@ abstract class MockUtil {
         {
           "name": "Potatoes",
           "imageUrl":
-              "https://www.freeiconspng.com/uploads/slice-of-potato-png-5.png",
+              "https://www.hexcoders.com/images/items/potato.png",
           "currency": 9.9,
           "currencyType": "\$",
           "sellingUnit": "per kg",
@@ -802,7 +802,7 @@ abstract class MockUtil {
         {
           "name": "Strawberries",
           "imageUrl":
-              "https://www.freeiconspng.com/uploads/strawberry-png-9.png",
+              "https://www.hexcoders.com/images/items/strawberry.png",
           "currency": 9.9,
           "currencyType": "\$",
           "sellingUnit": "per kg",
@@ -818,7 +818,7 @@ abstract class MockUtil {
         {
           "name": "Peas",
           "imageUrl":
-              "https://www.pngkey.com/png/full/46-466450_sweet-peas-vegetables-png.png",
+              "https://www.hexcoders.com/images/items/pea.png",
           "currency": 17.9,
           "currencyType": "\$",
           "sellingUnit": "per kg",
@@ -834,7 +834,7 @@ abstract class MockUtil {
         {
           "name": "Chips",
           "imageUrl":
-              "https://www.pngkey.com/png/full/110-1101283_chips-bag-png-clipart-freeuse-library-lays-salt.png",
+              "https://www.hexcoders.com/images/items/lays.png",
           "currency": 7.9,
           "currencyType": "\$",
           "sellingUnit": "per kg",
@@ -849,7 +849,7 @@ abstract class MockUtil {
         },
         {
           "name": "Corn",
-          "imageUrl": "https://freepngimg.com/thumb/categories/951.png",
+          "imageUrl": "https://www.hexcoders.com/images/items/corn.png",
           "currency": 49.9,
           "currencyType": "\$",
           "sellingUnit": "per kg",
@@ -865,7 +865,7 @@ abstract class MockUtil {
         {
           "name": "Spinach",
           "imageUrl":
-              "https://dehatisabji.com/wp-content/uploads/2020/11/Spinach-All-Green-600x469-1.jpg",
+              "https://www.hexcoders.com/images/items/spinach.png",
           "currency": 7,
           "currencyType": "\$",
           "sellingUnit": "per piece",
@@ -889,7 +889,7 @@ abstract class MockUtil {
         {
           "name": "Carrots",
           "imageUrl":
-              "https://www.transparentpng.com/thumb/carrot/71HwEm-fresh-carrot-photos.png",
+              "https://www.hexcoders.com/images/items/carrot.png",
           "currency": 19.9,
           "currencyType": "\$",
           "sellingUnit": "per kg",
@@ -905,7 +905,7 @@ abstract class MockUtil {
         {
           "name": "Banana",
           "imageUrl":
-              "https://www.pngkey.com/png/full/1009-10099133_banana-png-free-commercial-use-image-.png",
+              "https://www.hexcoders.com/images/items/banana.png",
           "currency": 7.9,
           "currencyType": "\$",
           "sellingUnit": "per kg",
@@ -921,7 +921,7 @@ abstract class MockUtil {
         {
           "name": "Beef",
           "imageUrl":
-              "https://www.pngkey.com/png/full/36-368340_beef-transparent-background.png",
+              "https://www.hexcoders.com/images/items/beef.png",
           "currency": 49.9,
           "currencyType": "\$",
           "sellingUnit": "per kg",
@@ -937,7 +937,7 @@ abstract class MockUtil {
         {
           "name": "Pineapple",
           "imageUrl":
-              "https://www.pngkey.com/png/full/6-67795_free-png-pineapple-png-images-transparent-pineapple-png.png",
+              "https://www.hexcoders.com/images/items/pine-apple.png",
           "currency": 7,
           "currencyType": "\$",
           "sellingUnit": "per piece",
@@ -953,7 +953,7 @@ abstract class MockUtil {
         {
           "name": "Lemons",
           "imageUrl":
-              "https://static.wixstatic.com/media/2cd43b_70a434cd69564ca0ae07358d23b5bcdb~mv2.png/v1/fill/w_320,h_312,q_90/2cd43b_70a434cd69564ca0ae07358d23b5bcdb~mv2.png",
+              "https://www.hexcoders.com/images/items/lemons.png",
           "currency": 7,
           "currencyType": "\$",
           "sellingUnit": "per piece",
@@ -977,7 +977,7 @@ abstract class MockUtil {
         {
           "name": "Honey",
           "imageUrl":
-              "https://freepngimg.com//thumb/honey/37317-3-honey-transparent-image-thumb.png",
+              "https://www.hexcoders.com/images/items/honey.png",
           "currency": 7,
           "currencyType": "\$",
           "sellingUnit": "per piece",
@@ -996,9 +996,10 @@ abstract class MockUtil {
 
   static List<String> getBanners() {
     return [
-      "https://www.kenresearch.com/uploads/posts/images/Herbal%20Products%20Market.jpg",
-      "https://images.unsplash.com/photo-1506617564039-2f3b650b7010?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Z3JvY2VyeXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80",
-      "https://image.freepik.com/free-vector/online-food-delivery-grocery-order-service-banner_107791-2153.jpg",
+      "https://www.hexcoders.com/images/banner-1.jpg",
+      "https://www.hexcoders.com/images/banner-2.jpg",
+      "https://www.hexcoders.com/images/banner-3.jpg",
+      "https://www.hexcoders.com/images/banner-4.jpg",
     ];
   }
 
@@ -1007,35 +1008,35 @@ abstract class MockUtil {
       {
         "title": "Fruits",
         "imageUrl":
-            "https://i.pinimg.com/originals/fa/07/04/fa0704ba240c7b884b9b7ee94157fb7d.png",
+            "https://www.hexcoders.com/images/items/fruit.png",
         "theme": 0xFFF9E3FD
       },
       {
         "title": "Vegetables",
         "imageUrl":
-            "https://cdn.iconscout.com/icon/free/png-256/cheese-1806482-1534540.png",
+            "https://www.hexcoders.com/images/items/veggies.png",
         "theme": 0xFFE9FBE5
       },
       {
         "title": "Dairy",
         "imageUrl":
-            "https://i.pinimg.com/originals/fa/07/04/fa0704ba240c7b884b9b7ee94157fb7d.png",
+            "https://www.hexcoders.com/images/items/dairy.png",
         "theme": 0xFFFEFFE5
       },
       {
         "title": "Meat",
-        "imageUrl": "https://img.icons8.com/emoji/452/cut-of-meat-emoji.png",
+        "imageUrl": "https://www.hexcoders.com/images/items/meat.png",
         "theme": 0xFFFCEFEB
       },
       {
-        "title": "Some",
-        "imageUrl": "https://img.icons8.com/emoji/452/cut-of-meat-emoji.png",
+        "title": "Cereal",
+        "imageUrl": "https://www.hexcoders.com/images/items/cereal.png",
         "theme": 0xFFF9E3FD
       },
       {
-        "title": "Random",
+        "title": "Cheese",
         "imageUrl":
-            "https://i.pinimg.com/originals/fa/07/04/fa0704ba240c7b884b9b7ee94157fb7d.png",
+            "https://www.hexcoders.com/images/items/cheese.png",
         "theme": 0xFFF9E3FD
       }
     ];

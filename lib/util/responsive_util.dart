@@ -84,8 +84,11 @@ class RowOrColumn extends StatelessWidget {
 
   final bool showRow;
 
+  final bool intrinsicRow;
+
   const RowOrColumn(
       {Key key,
+      this.intrinsicRow,
       this.rowMainAxisAlignment: MainAxisAlignment.start,
       this.rowMainAxisSize: MainAxisSize.max,
       this.rowCrossAxisAlignment: CrossAxisAlignment.center,
@@ -99,11 +102,14 @@ class RowOrColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return showRow
-        ? Row(
-            children: children,
-            mainAxisAlignment: rowMainAxisAlignment,
-            crossAxisAlignment: rowCrossAxisAlignment,
-            mainAxisSize: rowMainAxisSize,
+        ? IntrinsicHeightIf(
+            intrinsic: intrinsicRow,
+            child: Row(
+              children: children,
+              mainAxisAlignment: rowMainAxisAlignment,
+              crossAxisAlignment: rowCrossAxisAlignment,
+              mainAxisSize: rowMainAxisSize,
+            ),
           )
         : Column(
             children: children,
@@ -111,6 +117,22 @@ class RowOrColumn extends StatelessWidget {
             mainAxisAlignment: columnMainAxisAlignment,
             mainAxisSize: columnMainAxisSize,
           );
+  }
+}
+
+class IntrinsicHeightIf extends StatelessWidget {
+  final bool intrinsic;
+  final Widget child;
+  const IntrinsicHeightIf({Key key, this.intrinsic, this.child})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return intrinsic
+        ? IntrinsicHeight(
+            child: child,
+          )
+        : child;
   }
 }
 

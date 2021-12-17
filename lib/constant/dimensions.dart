@@ -1,6 +1,6 @@
 //screen sizes
 const double WIDTH_MOBILE = 600;
-const double WIFTH_TABLET = 900;
+const double WIDTH_TABLET = 900;
 const double WIDTH_DESKTOP = 1024;
 
 const double WIDTH_MAX_APP_WIDTH = 1200;
