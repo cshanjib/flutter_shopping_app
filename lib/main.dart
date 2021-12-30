@@ -28,6 +28,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
         builder: BotToastInit(),
         navigatorObservers: [BotToastNavigatorObserver()],
         theme: ThemeData(

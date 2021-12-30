@@ -4,6 +4,7 @@ import 'package:flutter_shopping_app/util/responsive_util.dart';
 
 class LoginIcon extends StatelessWidget {
   final ResponsiveUtil util;
+
   const LoginIcon({Key key, this.util}) : super(key: key);
 
   @override
@@ -26,12 +27,15 @@ class LoginIcon extends StatelessWidget {
                 onPressed: () {},
                 icon: Icon(
                   Icons.login_rounded,
-                  size: 50,
+                  size: util.incremental(40, factor: 10),
                   color: ThemeColor,
                 ),
                 label: Text(
                   "SHOP",
-                  style: TextStyle(fontSize: 30, color: ThemeTextColorLight),
+                  style: TextStyle(
+                      fontSize: 20,
+                      color: ThemeTextColorLight,
+                      fontWeight: FontWeight.bold),
                 )),
           ),
         ],

@@ -25,7 +25,7 @@ class ResponsiveUtil {
 
   double get optimalDeviceWidth => min(deviceSize.width, WIDTH_MAX_APP_WIDTH);
 
-  double incremental(double mobile, {double factor}) => isMobile
+  double incremental(double mobile, {double factor = 1}) => isMobile
       ? mobile
       : isDesktop
           ? mobile + (2 * factor)
@@ -43,8 +43,8 @@ class ResponsiveUtil {
   double get defaultGap => isDesktop
       ? GAP_NORMAL
       : isMobile
-          ? GAP_XXX_SMALL
-          : GAP_XX_SMALL;
+          ? GAP_XX_NORMAL
+          : GAP_X_NORMAL;
 
   double get smallFontSize => isDesktop
       ? FONT_X_SMALL

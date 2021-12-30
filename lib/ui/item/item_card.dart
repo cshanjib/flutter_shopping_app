@@ -2,16 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_shopping_app/constant/color.dart';
 import 'package:flutter_shopping_app/ui/item/data/model/product_item.dart';
 import 'package:flutter_shopping_app/ui/item/item_detail.dart';
+import 'package:flutter_shopping_app/util/responsive_util.dart';
 
 class ItemCard extends StatelessWidget {
-
   final ProductItem item;
-  const ItemCard({Key key,this.item})
-      : super(key: key);
+  final ResponsiveUtil responsiveUtil;
+  const ItemCard({Key key, this.item, this.responsiveUtil}) : super(key: key);
 
   _goToDetailsPage(BuildContext context) {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => ItemDetail(item: item,)));
+        context,
+        MaterialPageRoute(
+            builder: (context) => ItemDetail(
+                  item: item,
+                )));
   }
 
   @override
@@ -19,9 +23,11 @@ class ItemCard extends StatelessWidget {
     return InkWell(
       onTap: () => _goToDetailsPage(context),
       child: Container(
-          width: 120,
+          width: responsiveUtil.value<double>(
+              mobile: 120, desktop: 200, tablet: 160),
           padding: const EdgeInsets.all(10),
-          margin: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+          margin: EdgeInsets.symmetric(
+              horizontal: responsiveUtil.defaultSmallGap, vertical: 2),
           decoration: BoxDecoration(boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(0.5),
@@ -34,33 +40,43 @@ class ItemCard extends StatelessWidget {
             children: [
               Image.network(
                 item.imageUrl,
-                height: 100,
+                height: responsiveUtil.value<double>(
+                    mobile: 100, desktop: 140, tablet: 120),
+              ),
+              SizedBox(
+                height: responsiveUtil.incremental(4, factor: 4),
               ),
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
                   item.name,
-                  style: TextStyle(fontSize: 12, color: ThemeTextColor),
+                  style: TextStyle(
+                      fontSize: responsiveUtil.normalFontSize,
+                      color: ThemeTextColor),
                 ),
               ),
               SizedBox(
-                height: 4,
+                height: responsiveUtil.incremental(4),
               ),
               Row(
                 children: [
                   Text(
                     item.price,
-                    style: TextStyle(fontSize: 12, color: ThemeTextColor),
+                    style: TextStyle(
+                        fontSize: responsiveUtil.normalFontSize,
+                        color: ThemeTextColor),
                   ),
                   SizedBox(
-                    width: 4,
+                    width: responsiveUtil.incremental(4),
                   ),
                   Expanded(
                       child: Text(
                     item.sellingUnit,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(fontSize: 10, color: ThemeTextColorLight),
+                    style: TextStyle(
+                        fontSize: responsiveUtil.smallFontSize,
+                        color: ThemeTextColorLight),
                   )),
                 ],
               ),

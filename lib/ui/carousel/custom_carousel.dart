@@ -3,16 +3,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_shopping_app/ui/carousel/bloc/carousel_cubit.dart';
 import 'package:flutter_shopping_app/ui/carousel/carousel_loader_card.dart';
+import 'package:flutter_shopping_app/util/responsive_util.dart';
 import 'package:get_it/get_it.dart';
 
-class CustomCarousel extends StatelessWidget {
-  final double topMargin;
-  CustomCarousel({Key key, this.topMargin: 10}) : super(key: key);
+class CustomCarousel extends StatefulWidget {
+  final ResponsiveUtil responsiveUtil;
+  CustomCarousel({Key key, this.responsiveUtil}) : super(key: key);
 
+  @override
+  _CustomCarouselState createState() => _CustomCarouselState();
+}
+
+class _CustomCarouselState extends State<CustomCarousel>
+    with AutomaticKeepAliveClientMixin {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: topMargin),
+      padding: EdgeInsets.only(top: widget.responsiveUtil.defaultGap),
       child: _wrapWithBloc((context, state) {
         return CarouselSlider.builder(
             itemCount: state.size +
@@ -58,4 +65,7 @@ class CustomCarousel extends StatelessWidget {
   _retry(BuildContext context) {
     context.read<CarouselCubit>().loadBanners();
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }
