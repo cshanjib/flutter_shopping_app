@@ -30,35 +30,46 @@ class LoginForm extends StatelessWidget {
               constraints: BoxConstraints(maxWidth: WIDTH_TABLET),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20), color: Colors.white),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
+              child: Stack(
                 children: [
-                  LoginTitle(),
-                  Divider(
-                    height: 0,
-                    thickness: 16,
-                    color: ThemeTextColorLightest,
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      LoginTitle(),
+                      Divider(
+                        height: 0,
+                        thickness: 16,
+                        color: ThemeTextColorLightest,
+                      ),
+                    ],
                   ),
-                  SingleChildScrollView(
-                    child: RowOrColumn(
-                      intrinsicRow: true,
-                      showRow: !responsiveUtil.isMobile,
-                      children: [
-                        ExpandedIf(
-                          child: LoginIcon(
-                            util: responsiveUtil,
-                          ),
-                          expanded: !responsiveUtil.isMobile,
-                          flex: 2,
+                  ClipRRect(
+                    borderRadius:
+                        BorderRadius.only(bottomLeft: Radius.circular(20)),
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 80),
+                      child: SingleChildScrollView(
+                        child: RowOrColumn(
+                          intrinsicRow: true,
+                          showRow: !responsiveUtil.isMobile,
+                          children: [
+                            ExpandedIf(
+                              child: LoginIcon(
+                                util: responsiveUtil,
+                              ),
+                              expanded: !responsiveUtil.isMobile,
+                              flex: 2,
+                            ),
+                            ExpandedIf(
+                              child: LoginFormContent(
+                                state: state,
+                              ),
+                              expanded: !responsiveUtil.isMobile,
+                              flex: 3,
+                            )
+                          ],
                         ),
-                        ExpandedIf(
-                          child: LoginFormContent(
-                            state: state,
-                          ),
-                          expanded: !responsiveUtil.isMobile,
-                          flex: 3,
-                        )
-                      ],
+                      ),
                     ),
                   )
                 ],
